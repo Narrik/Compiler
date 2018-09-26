@@ -58,9 +58,26 @@ public class Tokeniser {
         if (Character.isWhitespace(c))
             return next();
 
+        // OPERATORS
         // recognises the plus operator
         if (c == '+')
             return new Token(TokenClass.PLUS, line, column);
+
+        // recognises the minus operator
+        if (c == '-')
+            return new Token(TokenClass.MINUS, line, column);
+
+        // recognises the asterix operator
+        if (c == '*')
+            return new Token(TokenClass.ASTERIX, line, column);
+
+        // recognises the div operator
+        if (c == '/')
+            return new Token(TokenClass.DIV, line, column);
+
+        // recognises the REM operator
+        if (c == '%')
+            return new Token(TokenClass.REM, line, column);
 
         // ... to be completed
 
