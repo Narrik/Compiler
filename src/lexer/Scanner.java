@@ -31,8 +31,8 @@ public class Scanner {
             return (char)peeked;
 
         int r = input.read();
-        if (r == -1)
-            throw new EOFException();
+        //if (r == -1)
+        //   throw new EOFException();
 
         peeked = r;
         return (char) r;
