@@ -1,5 +1,6 @@
 package parser;
 
+import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
 import lexer.Token;
 import lexer.Tokeniser;
 import lexer.Token.TokenClass;
@@ -138,16 +139,57 @@ public class Parser {
     }
 
     private void parseStructDecls() {
-        // to be completed ...
+        if (parseStructType()){
+            expect(TokenClass.LBRA);
+            parseVarDeclsMust();
+            parseVarDecls();
+            expect(TokenClass.RBRA);
+            expect(TokenClass.SC);
+            parseStructDecls();
+        }
     }
 
     private void parseVarDecls() {
-        // to be completed ...
+        if (lookAhead(3).tokenClass == TokenClass.SC){
+            parseType();
+            expect(TokenClass.IDENTIFIER);
+            expect(TokenClass.SC);
+        }
+        if (lookAhead(3).tokenClass == TokenClass.LSBR){
+            parseType();
+            expect(TokenClass.IDENTIFIER);
+            expect(TokenClass.LSBR);
+            expect(TokenClass.INT_LITERAL);
+            expect(TokenClass.RSBR);
+            expect(TokenClass.SC);
+        }
+        parseVarDecls();
+    }
+
+    private void parseVarDeclsMust() {
+
     }
 
     private void parseFunDecls() {
         // to be completed ...
     }
 
-    // to be completed ...
+    private boolean parseStructType() {
+        if (accept(TokenClass.STRUCT)) {
+            nextToken();
+            expect(TokenClass.IDENTIFIER);
+            return true;
+        }
+        return false;
+    }
+
+    private void parseType() {
+        if (!parseStructType()) {
+            expect(TokenClass.INT, TokenClass.CHAR, TokenClass.VOID);
+        }
+        if(accept(TokenClass.ASTERIX)){
+            nextToken();
+        }
+    }
 }
+

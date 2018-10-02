@@ -17,4 +17,4 @@ char lol
 '''
 '
 '
-/* this one wont work either *\ i hope for 9 errors
+/* this one wont work either *\
