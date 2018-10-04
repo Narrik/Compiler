@@ -160,7 +160,7 @@ public class Parser {
             expect(TokenClass.SC);
             parseVarDecls();
         }
-        if (classAfterTypeIdent() == TokenClass.LSBR) {
+        else if (classAfterTypeIdent() == TokenClass.LSBR) {
                     System.out.println("parsing VarLSBR");
             parseType();
             expect(TokenClass.IDENTIFIER);
@@ -173,7 +173,7 @@ public class Parser {
     }
 
     private void parseFunDecls() {
-        if(classAfterTypeIdent()== TokenClass.LPAR) {
+        /*if(classAfterTypeIdent()== TokenClass.LPAR) {
                     System.out.println("parsing Fun");
             parseType();
             expect(TokenClass.IDENTIFIER);
@@ -183,7 +183,7 @@ public class Parser {
             expect(TokenClass.RPAR);
             parseBlock();
             parseFunDecls();
-        }
+        }*/
 
     }
 
@@ -330,8 +330,10 @@ public class Parser {
     }
 
     private void parseExp(){
+                System.out.println("parsing Exp");
         parseAnd();
         if (accept(TokenClass.OR)) {
+            System.out.println("parsing Or");
             nextToken();
             parseExp();
         }
@@ -340,6 +342,7 @@ public class Parser {
     private void parseAnd(){
         parseEqNeq();
         if (accept(TokenClass.AND)) {
+            System.out.println("parsing And");
             nextToken();
             parseAnd();
         }
@@ -348,6 +351,7 @@ public class Parser {
     private void parseEqNeq(){
         parseLtGtLeGe();
         if (accept(TokenClass.EQ, TokenClass.NE)) {
+            System.out.println("parsing EqNeq");
             nextToken();
             parseEqNeq();
         }
@@ -356,6 +360,7 @@ public class Parser {
     private void parseLtGtLeGe(){
         parseAddSub();
         if (accept(TokenClass.LT, TokenClass.GT, TokenClass.LE, TokenClass.GE)) {
+            System.out.println("parsing LtGtLeGe");
             nextToken();
             parseLtGtLeGe();
         }
@@ -364,6 +369,7 @@ public class Parser {
     private void parseAddSub(){
         parseMulDivRem();
         if (accept(TokenClass.PLUS, TokenClass.MINUS)) {
+            System.out.println("parsing AddSub");
             nextToken();
             parseAddSub();
         }
@@ -372,6 +378,7 @@ public class Parser {
     private void parseMulDivRem(){
         parsePUTS();
         if (accept(TokenClass.ASTERIX, TokenClass.DIV, TokenClass.REM)) {
+            System.out.println("parsing MulDivRem");
             nextToken();
             parseMulDivRem();
         }
@@ -380,6 +387,7 @@ public class Parser {
     private void parsePUTS(){
         // sizeof
         if (accept(TokenClass.SIZEOF)) {
+                    System.out.println("parsing SizeOf");
             nextToken();
             expect(TokenClass.LPAR);
             parseType();
@@ -387,18 +395,21 @@ public class Parser {
         }
         // pointer indirection
         else if (accept(TokenClass.ASTERIX)){
+                    System.out.println("parsing Indirection");
             nextToken();
             parseExp();
         }
         // type casting
         else if (accept(TokenClass.LPAR) && (lookAhead(1).tokenClass == TokenClass.INT || lookAhead(1).tokenClass == TokenClass.CHAR || lookAhead(1).tokenClass == TokenClass.VOID || lookAhead(1).tokenClass == TokenClass.STRUCT)){
-                nextToken();
-                parseType();
-                expect(TokenClass.RPAR);
-                parseExp();
+                    System.out.println("parsing Type casting");
+            nextToken();
+            parseType();
+            expect(TokenClass.RPAR);
+            parseExp();
         }
         // unary minus
         else if (accept(TokenClass.MINUS)){
+                    System.out.println("parsing Minus");
             nextToken();
             parseExp();
         }
@@ -421,25 +432,24 @@ public class Parser {
             }
             expect(TokenClass.RPAR);
         }
-        // array access
-        else if (lookAhead(1).tokenClass == TokenClass.LSBR){
+        else{
             parseRest();
-            expect(TokenClass.LSBR);
-            parseExp();
-            expect(TokenClass.RSBR);
-        }
-        // structure field access
-        else if (lookAhead(1).tokenClass == TokenClass.DOT){
-            parseRest();
-            expect(TokenClass.DOT);
-            expect(TokenClass.IDENTIFIER);
-        }
-        else {
-            parseRest();
+            if (accept(TokenClass.LSBR)){
+                        System.out.println("parsing Array access");
+                nextToken();
+                parseExp();
+                expect(TokenClass.RSBR);
+            }
+            else if (accept(TokenClass.DOT)){
+                        System.out.println("parsing Field access");
+                nextToken();
+                expect(TokenClass.IDENTIFIER);
+            }
         }
     }
 
     private void parseRest(){
+                System.out.println("parsing Rest");
         if (accept(TokenClass.LPAR)) {
             nextToken();
             parseExp();
