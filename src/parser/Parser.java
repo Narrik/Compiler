@@ -1,6 +1,5 @@
 package parser;
 
-import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
 import lexer.Token;
 import lexer.Tokeniser;
 import lexer.Token.TokenClass;
@@ -173,7 +172,7 @@ public class Parser {
     }
 
     private void parseFunDecls() {
-        /*if(classAfterTypeIdent()== TokenClass.LPAR) {
+        if(classAfterTypeIdent()== TokenClass.LPAR) {
                     System.out.println("parsing Fun");
             parseType();
             expect(TokenClass.IDENTIFIER);
@@ -183,7 +182,7 @@ public class Parser {
             expect(TokenClass.RPAR);
             parseBlock();
             parseFunDecls();
-        }*/
+        }
 
     }
 
@@ -432,7 +431,7 @@ public class Parser {
             }
             expect(TokenClass.RPAR);
         }
-        else{
+        else {
             parseRest();
             if (accept(TokenClass.LSBR)){
                         System.out.println("parsing Array access");
