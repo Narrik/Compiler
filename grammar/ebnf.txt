@@ -47,3 +47,26 @@ sizeof       ::= "sizeof" "(" type ")"            # size of type
 typecast     ::= "(" type ")" exp                 # type casting
 
 
+
+
+
+exp        ::= "(" exp ")"
+             | IDENT | INT_LITERAL | CHAR_LITERAL | STRING_LITERAL
+             | "-" exp
+             | exp (">" | "<" | ">=" | "<=" | "!=" | "==" | "+" | "-" | "/" | "*" | "%" | "||" | "&&") exp  # binary operators
+             | "(" type ")" exp                 # typecast
+             | "sizeof" "(" type ")"            # sizeof
+             | "*" exp                          # valueat
+             | exp "." IDENT                    # fieldaccess
+             | exp "[" exp "]"                  # arrayaccess
+             | IDENT "(" [ exp ("," exp)* ] ")" # funcall
+
+funcall      ::= IDENT "(" [ exp ("," exp)* ] ")"
+arrayaccess  ::= exp "[" exp "]"                  # array access
+fieldaccess  ::= exp "." IDENT                    # structure field member access
+valueat      ::= "*" exp                          # Value at operator (pointer indirection)
+sizeof       ::= "sizeof" "(" type ")"            # size of type
+typecast     ::= "(" type ")" exp                 # type casting
+
+
+

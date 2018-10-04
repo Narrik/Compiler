@@ -1,9 +1,5 @@
 #include "minic-stdlib.h"
 void main() {
-// lol
-123fss
-"I am a \"string\""
-'\r'
   int n;
   int first;
   int second;
