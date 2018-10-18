@@ -1,7 +1,10 @@
+import ast.ASTPrinter;
+import ast.Program;
 import lexer.Scanner;
 import lexer.Token;
 import lexer.Tokeniser;
 import parser.Parser;
+import sem.SemanticAnalyzer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -78,9 +81,38 @@ public class Main {
 		    	System.out.println("Parsing: failed ("+parser.getErrorCount()+" errors)");
 		    System.exit(parser.getErrorCount() == 0 ? PASS : PARSER_FAIL);
         }  else if (mode == Mode.AST) {
-            System.exit(MODE_FAIL);
+            Parser parser = new Parser(tokeniser);
+            Program programAst = parser.parse();
+            if (parser.getErrorCount() == 0) {
+                System.out.println("Parsing: pass");
+                System.out.println("Printing out AST:");
+                PrintWriter writer;
+                StringWriter sw = new StringWriter();
+                try {
+                    writer = new PrintWriter(sw);
+                    programAst.accept(new ASTPrinter(writer));
+                    writer.flush();
+                    System.out.print(sw.toString());
+                    writer.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else
+                System.out.println("Parsing: failed ("+parser.getErrorCount()+" errors)");
+            System.exit(parser.getErrorCount() == 0 ? PASS : PARSER_FAIL);
         } else if (mode == Mode.SEMANTICANALYSIS) {
-            System.exit(MODE_FAIL);
+            Parser parser = new Parser(tokeniser);
+            Program programAst = parser.parse();
+            if (parser.getErrorCount() == 0) {
+                SemanticAnalyzer sem = new SemanticAnalyzer();
+                int errors = sem.analyze(programAst);
+                if (errors == 0)
+                    System.out.println("Semantic analysis: Pass");
+                else
+                    System.out.println("Semantic analysis: Failed (" + errors + ")");
+                System.exit(errors == 0 ? PASS : SEM_FAIL);
+            } else
+                System.exit(PARSER_FAIL);
         } else if (mode == Mode.GEN) {
             System.exit(MODE_FAIL);
         } else {

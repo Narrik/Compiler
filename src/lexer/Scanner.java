@@ -11,7 +11,7 @@ public class Scanner {
     private int peeked = -1;
 
     private int line = 1;
-    private int column = 1;
+    private int column = 0;
 
     public Scanner(File source) throws FileNotFoundException {
         input = new BufferedReader(new FileReader(source));
