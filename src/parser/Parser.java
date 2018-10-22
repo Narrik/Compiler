@@ -141,7 +141,7 @@ public class Parser {
     }
 
     private List<StructTypeDecl> parseStructDecls() {
-        /*if (accept(TokenClass.STRUCT)) {
+        if (accept(TokenClass.STRUCT)) {
             if (lookAhead(2).tokenClass == TokenClass.LBRA) {
                 parseStruct();
                 expect(TokenClass.LBRA);
@@ -150,12 +150,12 @@ public class Parser {
                 expect(TokenClass.SC);
                 parseStructDecls();
             }
-        }*/
+        }
         return null;
     }
 
     private List<VarDecl> parseVarDecls() {
-        /*if (classAfterTypeIdent() == TokenClass.SC) {
+        if (classAfterTypeIdent() == TokenClass.SC) {
             parseType();
             expect(TokenClass.IDENTIFIER);
             expect(TokenClass.SC);
@@ -169,12 +169,12 @@ public class Parser {
             expect(TokenClass.RSBR);
             expect(TokenClass.SC);
             parseVarDecls();
-        }*/
+        }
         return null;
     }
 
     private List<FunDecl> parseFunDecls() {
-        /*if(classAfterTypeIdent()== TokenClass.LPAR) {
+        if(classAfterTypeIdent()== TokenClass.LPAR) {
             parseType();
             expect(TokenClass.IDENTIFIER);
             expect(TokenClass.LPAR);
@@ -183,7 +183,7 @@ public class Parser {
             expect(TokenClass.RPAR);
             parseBlock();
             parseFunDecls();
-        }*/
+        }
         return null;
     }
 
