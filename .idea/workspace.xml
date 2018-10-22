@@ -2,109 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d26c8a3-606c-4ba5-818d-3141131c68ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/desc/part2/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/desc/part2/fibonacci.c-ast-dump" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/desc/part2/typing-rules/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/desc/part2/typing-rules/rules.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/desc/part2/typing-rules/rules.tex" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grammar/abstract_grammar.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/alpaca_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/ape_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/badger_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/bald_eagle_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/bat_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/bear_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/blue_crab_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/budgerigar_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/burro_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/camel_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/capybara_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/cat_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/chamois_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/chimpanzee_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/civet_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/coati_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/colt_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/cougar_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/crocodile_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/crow_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/donkey_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/dromedary_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/duckbill_platypus_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/elk_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/finch_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/gemsbok_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/gila_monster_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/gnu_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/goat_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/gold_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/gopher_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/impala_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/kangaroo_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/koala_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/lecturer_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/lion_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/lovebird_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/lynx_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/mongoose_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/mule_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/mustang_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/mynah_bird_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/newt_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/ocelot_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/opossum_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/orangutan_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/parakeet_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/pig_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/polar_bear_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/porcupine_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/pronghorn_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/puma_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/puppy_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/rabbit_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/ram_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/rat_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/rooster_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/salamander_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/scoreboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/sheep_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/sloth_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/starfish_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/tiger_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/warthog_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/waterbuck_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/weasel_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/wildcat_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/wombat_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/woodchuck_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/yak_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scoreboard/zebu_results.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/ASTNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/ASTPrinter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/ASTVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/BaseType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/Block.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/Expr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/FunDecl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/Program.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/Stmt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/StructTypeDecl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/Type.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/VarDecl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ast/VarExpr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sem/BaseSemanticVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sem/NameAnalysisVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sem/Scope.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sem/SemanticAnalyzer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sem/SemanticVisitor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sem/Symbol.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sem/TypeCheckVisitor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/ArrayAccessExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/ArrayType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/Assign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/BinOp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/ChrLiteral.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/ExprStmt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/FieldAccessExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/FunCallExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/If.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/IntLiteral.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/Op.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/PointerType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/Return.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/SizeOfExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/StrLiteral.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/StructType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/TypecastExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/ValueAtExpr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ast/While.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desc/part1/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/desc/part1/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lexer/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexer/Scanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ct-18-19/Main$Mode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ct-18-19/Main$Mode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ct-18-19/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ct-18-19/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ct-18-19/lexer/Scanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ct-18-19/lexer/Scanner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ct-18-19/parser/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ct-18-19/parser/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ASTPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ASTPrinter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/ASTVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ASTVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ast/StructTypeDecl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/StructTypeDecl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Parser.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -132,49 +57,49 @@
     <session id="-1309328865">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="28" />
+          <entry key="project.closed" value="32" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.4" value="3" />
-          <entry key="project.open.time.5" value="14" />
+          <entry key="project.open.time.5" value="18" />
           <entry key="project.open.time.6" value="7" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="29" />
+          <entry key="project.opened" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="c" value="23" />
+          <entry key="c" value="25" />
           <entry key="h" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="38" />
+          <entry key="java" value="177" />
           <entry key="md" value="2" />
-          <entry key="txt" value="3" />
+          <entry key="txt" value="7" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C++" value="22" />
+          <entry key="C++" value="24" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="38" />
+          <entry key="JAVA" value="177" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="PLAIN_TEXT" value="9" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="c" value="2564" />
-          <entry key="java" value="7312" />
+          <entry key="java" value="10618" />
           <entry key="txt" value="338" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="C++" value="2562" />
-          <entry key="JAVA" value="7312" />
+          <entry key="JAVA" value="10618" />
           <entry key="PLAIN_TEXT" value="340" />
         </counts>
       </usages-collector>
@@ -184,44 +109,84 @@
     <favorites_list name="ct-18-19" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="141" column="4" selection-start-line="141" selection-start-column="4" selection-end-line="141" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lexer/Scanner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="34" selection-start-line="34" selection-end-line="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lexer/Token.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="78" column="18" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lexer/Tokeniser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.55918616">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ast/ASTVisitor.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="15">
+                  <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/ast/ASTPrinter.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3900">
+                  <caret line="262" column="26" lean-forward="true" selection-start-line="262" selection-start-column="26" selection-end-line="262" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="538">
+                  <caret line="329" column="20" selection-start-line="329" selection-start-column="20" selection-end-line="329" selection-end-column="20" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#506#507#0" expanded="true" />
+                    <element signature="e#548#549#0" expanded="true" />
+                    <element signature="e#702#703#0" expanded="true" />
+                    <element signature="e#730#731#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/lexer/Token.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="529">
+                  <caret line="78" column="18" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/lexer/Tokeniser.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-2789">
+                  <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/grammar/abstract_grammar.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-231">
+                  <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -249,7 +214,17 @@
       <find>system</find>
       <find>Syste</find>
       <find>System</find>
+      <find>...</find>
+      <find>accep</find>
+      <find>delimi</find>
+      <find>acce</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src/ast</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -269,6 +244,30 @@
         <option value="$PROJECT_DIR$/tests/fundecl.c" />
         <option value="$PROJECT_DIR$/src/lexer/Scanner.java" />
         <option value="$PROJECT_DIR$/tests/comments.c" />
+        <option value="$PROJECT_DIR$/src/ast/VarDecl.java" />
+        <option value="$PROJECT_DIR$/src/ast/PointerType.java" />
+        <option value="$PROJECT_DIR$/src/ast/StructType.java" />
+        <option value="$PROJECT_DIR$/src/ast/ArrayType.java" />
+        <option value="$PROJECT_DIR$/src/ast/IntLiteral.java" />
+        <option value="$PROJECT_DIR$/src/ast/StrLiteral.java" />
+        <option value="$PROJECT_DIR$/src/ast/ChrLiteral.java" />
+        <option value="$PROJECT_DIR$/src/ast/FunCallExpr.java" />
+        <option value="$PROJECT_DIR$/src/ast/BinOp.java" />
+        <option value="$PROJECT_DIR$/src/ast/Op.java" />
+        <option value="$PROJECT_DIR$/src/ast/ArrayAccessExpr.java" />
+        <option value="$PROJECT_DIR$/src/ast/FieldAccessExpr.java" />
+        <option value="$PROJECT_DIR$/src/ast/ValueAtExpr.java" />
+        <option value="$PROJECT_DIR$/src/ast/SizeOfExpr.java" />
+        <option value="$PROJECT_DIR$/src/ast/TypecastExpr.java" />
+        <option value="$PROJECT_DIR$/src/ast/ASTVisitor.java" />
+        <option value="$PROJECT_DIR$/src/ast/StructTypeDecl.java" />
+        <option value="$PROJECT_DIR$/src/ast/Block.java" />
+        <option value="$PROJECT_DIR$/src/ast/ExprStmt.java" />
+        <option value="$PROJECT_DIR$/src/ast/If.java" />
+        <option value="$PROJECT_DIR$/src/ast/Assign.java" />
+        <option value="$PROJECT_DIR$/src/ast/Return.java" />
+        <option value="$PROJECT_DIR$/src/ast/While.java" />
+        <option value="$PROJECT_DIR$/src/ast/ASTPrinter.java" />
         <option value="$PROJECT_DIR$/src/parser/Parser.java" />
       </list>
     </option>
@@ -285,10 +284,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="14" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="9" />
     <option name="y" value="22" />
-    <option name="width" value="1664" />
+    <option name="width" value="1669" />
     <option name="height" value="972" />
   </component>
   <component name="ProjectView">
@@ -317,6 +316,12 @@
               <item name="ct-18-19" type="b2602c69:ProjectViewProjectNode" />
               <item name="ct-18-19" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ast" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ct-18-19" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ct-18-19" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="lexer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -334,15 +339,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value=";&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538778979211" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540217169933" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
@@ -361,7 +366,7 @@
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ct-18-19" />
-      <option name="PROGRAM_PARAMETERS" value="-parser tests/structdec.c dummy.out" />
+      <option name="PROGRAM_PARAMETERS" value="-parser tests/fibonacci.c dummy.out" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -405,18 +410,22 @@
       <workItem from="1539087672108" duration="641000" />
       <workItem from="1539137137725" duration="15000" />
       <workItem from="1539702781384" duration="327000" />
-      <workItem from="1539871880396" duration="239000" />
+      <workItem from="1539871880396" duration="359000" />
+      <workItem from="1539872265995" duration="1400000" />
+      <workItem from="1539958138688" duration="1534000" />
+      <workItem from="1540077686537" duration="2405000" />
+      <workItem from="1540163137307" duration="14474000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84586000" />
+    <option name="totallyTimeSpent" value="104505000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="14" y="22" width="1664" height="972" extended-state="0" />
+    <frame x="10" y="22" width="1670" height="972" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4893918" visible="true" weight="0.14734896" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4893918" visible="true" weight="0.1541769" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -425,7 +434,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.5106082" side_tool="true" weight="0.1350185" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295583" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992636" weight="0.19863792" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992636" weight="0.19772728" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.398641" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -434,7 +443,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50073636" side_tool="true" weight="0.20023696" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.3295583" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32954547" />
       <window_info anchor="bottom" id="Thumbnails" order="12" weight="0.3291714" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24969174" />
@@ -489,83 +498,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/minic-stdlib.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-986" />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ct-18-19.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desc/part1/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/Position.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/lang/System.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/singledeclaration.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/tictactoe.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="191" column="8" lean-forward="true" selection-start-line="191" selection-start-column="8" selection-end-line="191" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grammar/ebnf.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/fundecl.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="60" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/vardecl.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -594,6 +526,282 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sem/TypeCheckVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-282">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sem/Symbol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sem/SemanticAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sem/Scope.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-811">
+          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sem/SemanticVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sem/BaseSemanticVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sem/NameAnalysisVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/ArrayAccessExpr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/ArrayType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/BinOp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/Expr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/FieldAccessExpr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/Op.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/Program.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/SizeOfExpr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/StrLiteral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/TypecastExpr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/StructTypeDecl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="64" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/Return.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding>
+            <element signature="e#106#107#0" expanded="true" />
+            <element signature="e#138#139#0" expanded="true" />
+            <element signature="e#164#165#0" expanded="true" />
+            <element signature="e#188#189#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/While.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/Assign.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/If.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/FunCallExpr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/Stmt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/FunDecl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/ASTNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/Type.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/PointerType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/IntLiteral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+          <folding>
+            <element signature="e#114#115#0" expanded="true" />
+            <element signature="e#148#149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grammar/ebnf.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/ValueAtExpr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/ExprStmt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/StructType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/BaseType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/VarDecl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/ASTPrinter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3900">
+          <caret line="262" column="26" lean-forward="true" selection-start-line="262" selection-start-column="26" selection-end-line="262" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/fibonacci.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -601,31 +809,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
+    <entry file="file://$PROJECT_DIR$/grammar/abstract_grammar.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="141" column="4" selection-start-line="141" selection-start-column="4" selection-end-line="141" selection-end-column="4" />
+        <state relative-caret-position="-231">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lexer/Scanner.java">
+    <entry file="file://$PROJECT_DIR$/src/ast/VarExpr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" selection-start-line="34" selection-end-line="35" />
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/ASTVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lexer/Token.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
+        <state relative-caret-position="529">
           <caret line="78" column="18" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lexer/Scanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="34" selection-start-line="34" selection-end-line="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lexer/Tokeniser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="-2789">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ast/ChrLiteral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="34" lean-forward="true" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+          <folding>
+            <element signature="e#150#151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="329" column="20" selection-start-line="329" selection-start-column="20" selection-end-line="329" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
+            <element signature="e#548#549#0" expanded="true" />
+            <element signature="e#702#703#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

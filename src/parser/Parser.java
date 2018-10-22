@@ -139,9 +139,9 @@ public class Parser {
             parseIncludes();
         }
     }
-    
-    private void parseStructDecls() {
-        if (accept(TokenClass.STRUCT)) {
+
+    private List<StructTypeDecl> parseStructDecls() {
+        /*if (accept(TokenClass.STRUCT)) {
             if (lookAhead(2).tokenClass == TokenClass.LBRA) {
                 parseStruct();
                 expect(TokenClass.LBRA);
@@ -150,11 +150,12 @@ public class Parser {
                 expect(TokenClass.SC);
                 parseStructDecls();
             }
-        }
+        }*/
+        return null;
     }
 
-    private void parseVarDecls() {
-        if (classAfterTypeIdent() == TokenClass.SC) {
+    private List<VarDecl> parseVarDecls() {
+        /*if (classAfterTypeIdent() == TokenClass.SC) {
             parseType();
             expect(TokenClass.IDENTIFIER);
             expect(TokenClass.SC);
@@ -168,11 +169,12 @@ public class Parser {
             expect(TokenClass.RSBR);
             expect(TokenClass.SC);
             parseVarDecls();
-        }
+        }*/
+        return null;
     }
 
-    private void parseFunDecls() {
-        if(classAfterTypeIdent()== TokenClass.LPAR) {
+    private List<FunDecl> parseFunDecls() {
+        /*if(classAfterTypeIdent()== TokenClass.LPAR) {
             parseType();
             expect(TokenClass.IDENTIFIER);
             expect(TokenClass.LPAR);
@@ -181,8 +183,8 @@ public class Parser {
             expect(TokenClass.RPAR);
             parseBlock();
             parseFunDecls();
-        }
-
+        }*/
+        return null;
     }
 
     private void parseVarDeclsMust() {
@@ -319,12 +321,13 @@ public class Parser {
 
     }
 
-    private void parseExp(){
+    private Expr parseExp(){
         parseAnd();
         if (accept(TokenClass.OR)) {
             nextToken();
             parseExp();
         }
+        return null;
     }
 
     private void parseAnd(){
@@ -425,15 +428,36 @@ public class Parser {
         }
     }
 
-    private void parseRest(){
+    private Expr parseRest(){
         if (accept(TokenClass.LPAR)) {
             nextToken();
-            parseExp();
+            Expr e = parseExp();
             expect(TokenClass.RPAR);
+            return e;
         }
-        else
-            expect(TokenClass.IDENTIFIER, TokenClass.INT_LITERAL, TokenClass.CHAR_LITERAL, TokenClass.STRING_LITERAL);
+        else if(accept(TokenClass.IDENTIFIER)) {
+            Token n = expect(TokenClass.IDENTIFIER);
+            return new VarExpr(n.data);
+        }
+        else if(accept(TokenClass.INT_LITERAL)){
+            Token n = expect(TokenClass.INT_LITERAL);
+            int i = Integer.parseInt(n.data);
+            return new IntLiteral(i);
+        }
+        else if(accept(TokenClass.STRING_LITERAL)){
+            Token n = expect(TokenClass.STRING_LITERAL);
+            return new StrLiteral(n.data);
+        }
+        else {
+            Token n = expect(TokenClass.CHAR_LITERAL);
+            char c = n.data.charAt(0);
+            return new ChrLiteral(c);
+        }
     }
+
+
+
+
 
     private TokenClass classAfterTypeIdent() {
         if (accept(TokenClass.INT, TokenClass.CHAR, TokenClass.VOID)) {
