@@ -11,11 +11,6 @@ public class If extends Stmt {
         this.stmt2 = stmt2;
     }
 
-    public If(Expr expr, Stmt stmt1){
-        this.expr = expr;
-        this.stmt1 = stmt1;
-        this.stmt2 = null;
-    }
 
     public <T> T accept(ASTVisitor<T> v) {
         return v.visitIf(this);

@@ -7,10 +7,6 @@ public class Return extends Stmt {
         this.expr = expr;
     }
 
-    public Return(){
-        this.expr = null;
-    }
-
     public <T> T accept(ASTVisitor<T> v) {
         return v.visitReturn(this);
     }
