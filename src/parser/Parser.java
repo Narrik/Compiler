@@ -429,7 +429,7 @@ public class Parser {
         // ValueAtExpr
         else if (accept(TokenClass.ASTERIX)){
             nextToken();
-            Expr e = parseExp();
+            Expr e = parsePUTS();
             return new ValueAtExpr(e);
         }
         // TypecastExpr
@@ -437,13 +437,13 @@ public class Parser {
             nextToken();
             Type t = parseType();
             expect(TokenClass.RPAR);
-            Expr e = parseExp();
+            Expr e = parsePUTS();
             return new TypecastExpr(t,e);
         }
         // Unary Minus == BinOp(0,SUB,exp)
         else if (accept(TokenClass.MINUS)){
             nextToken();
-            Expr e = parseExp();
+            Expr e = parsePUTS();
             return new BinOp(new IntLiteral(0),Op.SUB,e);
         }
         else {
