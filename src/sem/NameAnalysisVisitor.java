@@ -38,7 +38,7 @@ public class NameAnalysisVisitor extends BaseSemanticVisitor<Void> {
 
     @Override
     public Void visitProgram(Program p) {
-        //p.funDecls.addAll(0, builtInFun);
+        p.funDecls.addAll(0, builtInFun);
         for (StructTypeDecl std : p.structTypeDecls) {
             std.accept(this);
         }
