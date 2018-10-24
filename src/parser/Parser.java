@@ -198,18 +198,6 @@ public class Parser {
         return new VarDecl(new ArrayType(t,elements),varName.data);
     }
 
-    private void parseVarDeclsMust() {
-        parseType();
-        expect(TokenClass.IDENTIFIER);
-        if (accept(TokenClass.LSBR)){
-            nextToken();
-            expect(TokenClass.INT_LITERAL);
-            expect(TokenClass.RSBR);
-        }
-        expect(TokenClass.SC);
-        parseVarDecls();
-    }
-
     private List<FunDecl> parseFunDecls() {
         List<FunDecl> funDecls = new ArrayList<>();
         if(classAfterTypeIdent() == TokenClass.LPAR) {
@@ -459,8 +447,7 @@ public class Parser {
             return new BinOp(new IntLiteral(0),Op.SUB,e);
         }
         else {
-            Expr e = parseAS();
-            return e;
+            return parseAS();
         }
     }
 

@@ -1,5 +1,6 @@
 package sem;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Scope {
@@ -7,19 +8,27 @@ public class Scope {
 	private Map<String, Symbol> symbolTable;
 	
 	public Scope(Scope outer) { 
-		this.outer = outer; 
+		this.outer = outer;
+		this.symbolTable = new HashMap<>();
 	}
 	
-	public Scope() { this(null); }
+	public Scope() {
+		this.outer = null;
+		this.symbolTable = new HashMap<>();
+	}
 	
 	public Symbol lookup(String name) {
-		// To be completed...
+		Symbol curSymbol = lookupCurrent(name);
+		if (curSymbol != null)
+			return curSymbol;
+		if (outer != null) {
+			return outer.lookup(name);
+		}
 		return null;
 	}
 	
 	public Symbol lookupCurrent(String name) {
-		// To be completed...
-		return null;
+		return symbolTable.get(name);
 	}
 	
 	public void put(Symbol sym) {
