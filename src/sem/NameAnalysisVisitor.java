@@ -152,7 +152,7 @@ public class NameAnalysisVisitor extends BaseSemanticVisitor<Void> {
 
     @Override
     public Void visitValueAtExpr(ValueAtExpr va) {
-        va.accept(this);
+        va.expr.accept(this);
         return null;
     }
 
