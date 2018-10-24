@@ -38,7 +38,7 @@ public class NameAnalysisVisitor extends BaseSemanticVisitor<Void> {
 
     @Override
     public Void visitProgram(Program p) {
-        p.funDecls.addAll(0, builtInFun);
+        //p.funDecls.addAll(0, builtInFun);
         for (StructTypeDecl std : p.structTypeDecls) {
             std.accept(this);
         }
@@ -173,12 +173,12 @@ public class NameAnalysisVisitor extends BaseSemanticVisitor<Void> {
         for (VarDecl vd : b.params){
             vd.accept(this);
         }
-        Scope oldScope = scope;
-        scope = new Scope(oldScope);
         for(Stmt stmt : b.stmts){
+            Scope oldScope = scope;
+            scope = new Scope(oldScope);
             stmt.accept(this);
+            scope = oldScope;
         }
-        scope = oldScope;
 		return null;
 	}
 
@@ -200,7 +200,10 @@ public class NameAnalysisVisitor extends BaseSemanticVisitor<Void> {
         i.expr.accept(this);
         i.stmt1.accept(this);
         if (i.stmt2 != null){
+            Scope oldScope = scope;
+            scope = new Scope(oldScope);
             i.stmt2.accept(this);
+            scope = oldScope;
         }
         return null;
     }
