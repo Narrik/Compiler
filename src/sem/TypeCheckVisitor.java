@@ -209,6 +209,9 @@ public class TypeCheckVisitor extends BaseSemanticVisitor<Type> {
     public Type visitAssign(Assign a) {
 	    Type aT1 = a.expr1.accept(this);
         Type aT2 = a.expr2.accept(this);
+        if (aT1 instanceof ArrayType || aT1 == BaseType.VOID || aT2 instanceof ArrayType || aT2 == BaseType.VOID){
+            error("Assign expressions cannot be of type void or ArrayType");
+        }
         return null;
     }
 

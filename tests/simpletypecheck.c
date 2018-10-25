@@ -6,8 +6,9 @@ char oko[2];
 int pls;
 int a(int d){
 x;
+op[0] = 0;
+p = 5;
+*p = 5;
 a(*(int *) f);
 oko[0] == 8;
-if (p){}
-while (p){}
 }

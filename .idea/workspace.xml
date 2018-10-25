@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d26c8a3-606c-4ba5-818d-3141131c68ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/simpletypecheck.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/typecheck.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ct-18-19/ast/ASTPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ct-18-19/ast/ASTPrinter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ct-18-19/ast/ArrayType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ct-18-19/ast/ArrayType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ct-18-19/ast/PointerType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ct-18-19/ast/PointerType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ct-18-19/ast/StructType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ct-18-19/ast/StructType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ct-18-19/sem/NameAnalysisVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ct-18-19/sem/NameAnalysisVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ct-18-19/sem/SemanticAnalyzer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ct-18-19/sem/SemanticAnalyzer$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ct-18-19/sem/SemanticAnalyzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ct-18-19/sem/SemanticAnalyzer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ct-18-19/sem/TypeCheckVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ct-18-19/sem/TypeCheckVisitor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/ASTPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ASTPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/ArrayType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ArrayType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/PointerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/PointerType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/StructType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/StructType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sem/NameAnalysisVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sem/NameAnalysisVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sem/SemanticAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sem/SemanticAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sem/TypeCheckVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sem/TypeCheckVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/shadowing.c" beforeDir="false" afterPath="$PROJECT_DIR$/tests/shadowing.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/singledeclaration.c" beforeDir="false" afterPath="$PROJECT_DIR$/tests/singledeclaration.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/simpletypecheck.c" beforeDir="false" afterPath="$PROJECT_DIR$/tests/simpletypecheck.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,7 +46,7 @@
           <entry key="c" value="47" />
           <entry key="h" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="286" />
+          <entry key="java" value="287" />
           <entry key="md" value="2" />
           <entry key="txt" value="12" />
           <entry key="xml" value="2" />
@@ -74,7 +56,7 @@
         <counts>
           <entry key="C++" value="46" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="286" />
+          <entry key="JAVA" value="287" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="14" />
           <entry key="XML" value="2" />
@@ -82,15 +64,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="c" value="4668" />
-          <entry key="java" value="20781" />
+          <entry key="c" value="4680" />
+          <entry key="java" value="20898" />
           <entry key="txt" value="339" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C++" value="4666" />
-          <entry key="JAVA" value="20781" />
+          <entry key="C++" value="4678" />
+          <entry key="JAVA" value="20898" />
           <entry key="PLAIN_TEXT" value="341" />
         </counts>
       </usages-collector>
@@ -106,7 +88,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/sem/NameAnalysisVisitor.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1163">
+                <state relative-caret-position="-1334">
                   <caret line="85" column="37" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -148,11 +130,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/sem/TypeCheckVisitor.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="275">
-                  <caret line="210" column="40" selection-start-line="210" selection-start-column="40" selection-end-line="210" selection-end-column="40" />
+                <state relative-caret-position="305">
+                  <caret line="212" column="71" selection-start-line="212" selection-start-column="71" selection-end-line="212" selection-end-column="71" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#265#266#0" expanded="true" />
@@ -184,8 +166,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ast/ArrayType.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="14" column="89" selection-start-line="14" selection-start-column="89" selection-end-line="14" selection-end-column="89" />
+                <state relative-caret-position="165">
+                  <caret line="11" column="40" lean-forward="true" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/sem/SemanticAnalyzer.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="375">
+                  <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
                 </state>
               </provider>
             </entry>
@@ -215,11 +206,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/simpletypecheck.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+                <state relative-caret-position="120">
+                  <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
                 </state>
               </provider>
             </entry>
@@ -229,20 +220,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="165">
                   <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="617">
-                  <caret line="278" column="21" lean-forward="true" selection-start-line="278" selection-start-column="21" selection-end-line="278" selection-end-column="21" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#730#731#0" expanded="true" />
-                    <element signature="e#758#759#0" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -375,8 +352,8 @@
         <option value="$PROJECT_DIR$/src/ast/StructType.java" />
         <option value="$PROJECT_DIR$/src/ast/ArrayType.java" />
         <option value="$PROJECT_DIR$/tests/typecheck.c" />
-        <option value="$PROJECT_DIR$/tests/simpletypecheck.c" />
         <option value="$PROJECT_DIR$/src/sem/TypeCheckVisitor.java" />
+        <option value="$PROJECT_DIR$/tests/simpletypecheck.c" />
       </list>
     </option>
   </component>
@@ -461,7 +438,7 @@
     <property name="SearchEverywhereHistoryKey" value=";&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540436133955" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540436372795" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -531,12 +508,12 @@
       <workItem from="1539872265995" duration="1400000" />
       <workItem from="1539958138688" duration="1534000" />
       <workItem from="1540077686537" duration="2405000" />
-      <workItem from="1540163137307" duration="94034000" />
+      <workItem from="1540163137307" duration="94277000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184065000" />
+    <option name="totallyTimeSpent" value="184308000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="29" y="22" width="1651" height="972" extended-state="0" />
@@ -573,7 +550,7 @@
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.3298397" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4893918" visible="true" weight="0.15599751" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4893918" visible="true" weight="0.15599751" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -582,7 +559,7 @@
       <window_info id="Favorites" order="6" sideWeight="0.5106082" side_tool="true" weight="0.1350185" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295583" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4992636" visible="true" weight="0.20340909" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4992636" visible="true" weight="0.20340909" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.398641" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -906,43 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sem/SemanticAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sem/NameAnalysisVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1163">
-          <caret line="85" column="37" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#145#146#0" expanded="true" />
-            <element signature="e#167#168#0" expanded="true" />
-            <element signature="e#3912#3913#0" expanded="true" />
-            <element signature="e#3939#3940#0" expanded="true" />
-            <element signature="e#4420#4421#0" expanded="true" />
-            <element signature="e#4447#4448#0" expanded="true" />
-            <element signature="e#5698#5699#0" expanded="true" />
-            <element signature="e#5725#5726#0" expanded="true" />
-            <element signature="e#5791#5792#0" expanded="true" />
-            <element signature="e#5818#5819#0" expanded="true" />
-            <element signature="e#5882#5883#0" expanded="true" />
-            <element signature="e#5909#5910#0" expanded="true" />
-            <element signature="e#5971#5972#0" expanded="true" />
-            <element signature="e#5998#5999#0" expanded="true" />
-            <element signature="e#6061#6062#0" expanded="true" />
-            <element signature="e#6088#6089#0" expanded="true" />
-            <element signature="e#6151#6152#0" expanded="true" />
-            <element signature="e#6178#6179#0" expanded="true" />
-            <element signature="e#6241#6242#0" expanded="true" />
-            <element signature="e#6268#6269#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/parser/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="617">
@@ -972,13 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/ArrayType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="89" selection-start-line="14" selection-start-column="89" selection-end-line="14" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ast/VarExpr.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -986,6 +919,43 @@
           <folding>
             <element signature="e#248#249#0" expanded="true" />
             <element signature="e#288#289#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grammar/abstract_grammar.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="37" column="27" lean-forward="true" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sem/NameAnalysisVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1334">
+          <caret line="85" column="37" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#145#146#0" expanded="true" />
+            <element signature="e#167#168#0" expanded="true" />
+            <element signature="e#3912#3913#0" expanded="true" />
+            <element signature="e#3939#3940#0" expanded="true" />
+            <element signature="e#4420#4421#0" expanded="true" />
+            <element signature="e#4447#4448#0" expanded="true" />
+            <element signature="e#5698#5699#0" expanded="true" />
+            <element signature="e#5725#5726#0" expanded="true" />
+            <element signature="e#5791#5792#0" expanded="true" />
+            <element signature="e#5818#5819#0" expanded="true" />
+            <element signature="e#5882#5883#0" expanded="true" />
+            <element signature="e#5909#5910#0" expanded="true" />
+            <element signature="e#5971#5972#0" expanded="true" />
+            <element signature="e#5998#5999#0" expanded="true" />
+            <element signature="e#6061#6062#0" expanded="true" />
+            <element signature="e#6088#6089#0" expanded="true" />
+            <element signature="e#6151#6152#0" expanded="true" />
+            <element signature="e#6178#6179#0" expanded="true" />
+            <element signature="e#6241#6242#0" expanded="true" />
+            <element signature="e#6268#6269#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1001,10 +971,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grammar/abstract_grammar.txt">
+    <entry file="file://$PROJECT_DIR$/src/ast/ArrayType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="37" column="27" lean-forward="true" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+        <state relative-caret-position="165">
+          <caret line="11" column="40" lean-forward="true" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sem/SemanticAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
@@ -1015,17 +992,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/simpletypecheck.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sem/TypeCheckVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="210" column="40" selection-start-line="210" selection-start-column="40" selection-end-line="210" selection-end-column="40" />
+        <state relative-caret-position="305">
+          <caret line="212" column="71" selection-start-line="212" selection-start-column="71" selection-end-line="212" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#265#266#0" expanded="true" />
@@ -1041,6 +1011,13 @@
             <element signature="e#4939#4940#0" expanded="true" />
             <element signature="e#4974#4975#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/simpletypecheck.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
         </state>
       </provider>
     </entry>
