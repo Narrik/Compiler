@@ -124,12 +124,18 @@ public class Parser {
 
 
     private Program parseProgram() {
-        parseIncludes();
-        List<StructTypeDecl> stds = parseStructDecls();
-        List<VarDecl> vds = parseVarDecls();
-        List<FunDecl> fds = parseFunDecls();
-        expect(TokenClass.EOF);
-        return new Program(stds, vds, fds);
+        try {
+            parseIncludes();
+            List<StructTypeDecl> stds = parseStructDecls();
+            List<VarDecl> vds = parseVarDecls();
+            List<FunDecl> fds = parseFunDecls();
+            expect(TokenClass.EOF);
+            return new Program(stds, vds, fds);
+        } catch (NullPointerException e){
+            System.out.println("Null pointer exception");
+            e.printStackTrace();
+        }
+        return new Program(new ArrayList<>(),new ArrayList<>(),new ArrayList<>());
     }
 
     // includes are ignored, so does not need to return an AST node

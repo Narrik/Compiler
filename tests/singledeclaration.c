@@ -1,5 +1,7 @@
 struct a{ int b;};
 struct a{ int c;};
+char 'l';
+
 int function(){
 int x;
 void x;
