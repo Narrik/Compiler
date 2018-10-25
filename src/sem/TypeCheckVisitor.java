@@ -7,7 +7,8 @@ import java.util.List;
 
 public class TypeCheckVisitor extends BaseSemanticVisitor<Type> {
 
-    List<StructTypeDecl> structTypeDeclList = new ArrayList<>();
+    public List<StructTypeDecl> structTypeDeclList = new ArrayList<>();
+    public Type curFunType = BaseType.VOID;
 
 	@Override
 	public Type visitBaseType(BaseType bt) {
@@ -140,8 +141,21 @@ public class TypeCheckVisitor extends BaseSemanticVisitor<Type> {
     public Type visitFieldAccessExpr(FieldAccessExpr fa) {
 	    Type faT = fa.structure.accept(this);
         if (faT instanceof StructType){
-
-        }
+                for (StructTypeDecl s : structTypeDeclList) {
+                    if(s.structType.structName.equals(((StructType) faT).structName)){
+                        for (VarDecl vd : s.params){
+                            if(fa.field.equals(vd.varName)){
+                                return null;
+                            }
+                        }
+                        error("Struct "+s.structType.structName+" has no "+fa.field+" field");
+                        return null;
+                    }
+                }
+                error("Struct "+((StructType) faT).structName+" hasn't been declared");
+                return null;
+            }
+        error("Cannot do a field access on a "+faT);
         return null;
     }
 
@@ -209,16 +223,39 @@ public class TypeCheckVisitor extends BaseSemanticVisitor<Type> {
     public Type visitAssign(Assign a) {
 	    Type aT1 = a.expr1.accept(this);
         Type aT2 = a.expr2.accept(this);
+        if (!aT1.equals(aT2)){
+            error("We can only assign between 2 expressions of the same type");
+        }
         if (aT1 instanceof ArrayType || aT1 == BaseType.VOID || aT2 instanceof ArrayType || aT2 == BaseType.VOID){
             error("Assign expressions cannot be of type void or ArrayType");
         }
-        return null;
+        if (a.expr1 instanceof VarExpr || a.expr1 instanceof FieldAccessExpr ||
+            a.expr1 instanceof ArrayAccessExpr || a.expr1 instanceof ValueAtExpr){
+            return null;
+        } else {
+            error("Left hand side expression of an assignment statement must be one of the following: VarExpr, FieldAccessExpr, ArrayAccessExpr or ValueAtExpr");
+            return null;
+        }
     }
 
     @Override
     public Type visitReturn(Return r) {
-        // To be completed...
-        return null;
+        if (r.expr == null){
+            if (curFunType == BaseType.VOID){
+                return null;
+            } else {
+                error("Cannot return null for a function with type "+curFunType);
+                return null;
+            }
+        } else {
+            Type rT = r.expr.accept(this);
+            if (rT.equals(curFunType)){
+                return null;
+            } else {
+                error("Return type and function type must match");
+                return null;
+            }
+        }
     }
 
 	@Override
@@ -254,7 +291,7 @@ public class TypeCheckVisitor extends BaseSemanticVisitor<Type> {
 
     @Override
     public Type visitStructTypeDecl(StructTypeDecl st) {
-        structTypeDeclList.add(st);
+	    structTypeDeclList.add(st);
 	    for (VarDecl vd : st.params){
 	        vd.accept(this);
         }
@@ -263,6 +300,7 @@ public class TypeCheckVisitor extends BaseSemanticVisitor<Type> {
 
     @Override
     public Type visitFunDecl(FunDecl p) {
+	    curFunType = p.type;
         p.type.accept(this);
         for (VarDecl vd : p.params){
             vd.accept(this);
@@ -273,6 +311,14 @@ public class TypeCheckVisitor extends BaseSemanticVisitor<Type> {
 
 	@Override
 	public Type visitVarDecl(VarDecl vd) {
+	    if (vd.type instanceof StructType) {
+            for (StructTypeDecl s : structTypeDeclList) {
+                if(s.structType.structName.equals(((StructType) vd.type).structName)){
+                    return null;
+                }
+            }
+            error("Struct "+((StructType) vd.type).structName+" hasn't been declared");
+        }
 		if (vd.type == BaseType.VOID){
 		    error("Cannot declare a variable with type VOID");
         }
