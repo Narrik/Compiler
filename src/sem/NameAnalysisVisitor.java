@@ -86,13 +86,8 @@ public class NameAnalysisVisitor extends BaseSemanticVisitor<Void> {
             error("Function "+p.name+" has already been declared");
         } else {
             scope.put(new FunSymbol(p));
-            Scope oldScope = scope;
-            scope = new Scope(oldScope);
-            for (VarDecl vd : p.params){
-                vd.accept(this);
-            }
+            p.block.params.addAll(0,p.params);
             p.block.accept(this);
-            scope = oldScope;
         }
         return null;
     }
@@ -121,6 +116,9 @@ public class NameAnalysisVisitor extends BaseSemanticVisitor<Void> {
             error("Expected function, found variable");
         } else {
             f.fd = ((FunSymbol) s).fd;
+            for (Expr param : f.params){
+                param.accept(this);
+            }
         }
         return null;
     }
@@ -170,15 +168,15 @@ public class NameAnalysisVisitor extends BaseSemanticVisitor<Void> {
 
 	@Override
 	public Void visitBlock(Block b) {
+        Scope oldScope = scope;
+        scope = new Scope(oldScope);
         for (VarDecl vd : b.params){
             vd.accept(this);
         }
         for(Stmt stmt : b.stmts){
-            Scope oldScope = scope;
-            scope = new Scope(oldScope);
             stmt.accept(this);
-            scope = oldScope;
         }
+        scope = oldScope;
 		return null;
 	}
 
@@ -200,10 +198,7 @@ public class NameAnalysisVisitor extends BaseSemanticVisitor<Void> {
         i.expr.accept(this);
         i.stmt1.accept(this);
         if (i.stmt2 != null){
-            Scope oldScope = scope;
-            scope = new Scope(oldScope);
             i.stmt2.accept(this);
-            scope = oldScope;
         }
         return null;
     }

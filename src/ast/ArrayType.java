@@ -9,6 +9,16 @@ public class ArrayType implements Type {
         this.elements = elements;
     }
 
+    public boolean equals(Object other){
+        if (other instanceof ArrayType){
+            Type otherT = ((ArrayType) other).type;
+            if (otherT.equals(this.type) && ((ArrayType) other).elements == this.elements) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public <T> T accept(ASTVisitor<T> v) {
         return v.visitArrayType(this);
     }

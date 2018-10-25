@@ -1,7 +1,11 @@
-
+struct a{ int b;};
+struct a{ int c;};
 int function(){
 int x;
+void x;
 int a[1];
+struct a s;
+struct a l;
 struct a s;
 x = "p";
 s.lol;

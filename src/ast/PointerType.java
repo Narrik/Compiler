@@ -7,6 +7,17 @@ public class PointerType implements Type {
         this.type = type;
     }
 
+
+    public boolean equals(Object other){
+       if (other instanceof PointerType){
+           Type otherT = ((PointerType) other).type;
+           if (otherT.equals(this.type)) {
+               return true;
+           }
+       }
+       return false;
+    }
+
     public <T> T accept(ASTVisitor<T> v) {
         return v.visitPointerType(this);
     }
