@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1"><title>Test report for blue cat | Compiling Techniques, University of Edinburgh</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous"><style type="text/css">body { margin: 0 auto; width: 70%; padding-bottom: 30px; } td.hd { font-weight: bold; text-align: center; } td { padding: 5px; }</style></head>
 <body><div class="container" style="width:100%">
 <h2>Test report</h2>
-<table cellspacing="1" cellpadding="5" border="1"><tbody><tr><td>Alias</td><td>mule</td></tr><tr><td>Date</td><td>2018-10-18_11h00m02s</td></tr><tr><td>Tests summary</td><td><table cellspacing="1" cellpadding="5" border="1"><tbody><tr><td class="hd">Part</td><td class="hd">Passed / Total</td></tr><tr><td>Part 1: Lexer and parser</td><td>29 / 75</td></tr><tr><td>Part 2: AST and sematic analysis</td><td>0 / 94</td></tr></tbody></table></td></tr><tr><td>Exit codes</td><td><table cellspacing="1" cellpadding="5" border="1"><tbody><tr><td class="hd">Code</td><td class="hd">Explanation</td></tr><tr><td>250</td><td>One or more lexer error(s).</td></tr><tr><td>245</td><td>One or more parse error(s).</td></tr><tr><td>240</td><td>One or more semantic error(s).</td></tr><tr><td>230</td><td>Compiled program produced wrong output.</td></tr><tr><td>224</td><td>AST construction is wrong.</td></tr><tr><td>204</td><td>Compiled program not found.</td></tr><tr><td>124</td><td>Your compiler or program timed out (your compiler or produced program might have an infinite loop).</td></tr><tr><td>1</td><td>JVM exited prematurely. It occurs when your compiler has infinite recursion, requires a Java version different from 1.8, etc.</td></tr></tbody></table></td></tr></tbody></table></div><h2 class="page-header">Part 1: Lexer and parser</h2>
+<table cellspacing="1" cellpadding="5" border="1"><tbody><tr><td>Alias</td><td>mule</td></tr><tr><td>Date</td><td>2018-10-29_16h00m02s</td></tr><tr><td>Tests summary</td><td><table cellspacing="1" cellpadding="5" border="1"><tbody><tr><td class="hd">Part</td><td class="hd">Passed / Total</td></tr><tr><td>Part 1: Lexer and parser</td><td>75 / 75</td></tr><tr><td>Part 2: AST and sematic analysis</td><td>92 / 94</td></tr></tbody></table></td></tr><tr><td>Exit codes</td><td><table cellspacing="1" cellpadding="5" border="1"><tbody><tr><td class="hd">Code</td><td class="hd">Explanation</td></tr><tr><td>250</td><td>One or more lexer error(s).</td></tr><tr><td>245</td><td>One or more parse error(s).</td></tr><tr><td>240</td><td>One or more semantic error(s).</td></tr><tr><td>230</td><td>Compiled program produced wrong output.</td></tr><tr><td>224</td><td>AST construction is wrong.</td></tr><tr><td>204</td><td>Compiled program not found.</td></tr><tr><td>124</td><td>Your compiler or program timed out (your compiler or produced program might have an infinite loop).</td></tr><tr><td>1</td><td>JVM exited prematurely. It occurs when your compiler has infinite recursion, requires a Java version different from 1.8, etc.</td></tr></tbody></table></td></tr></tbody></table></div><h2 class="page-header">Part 1: Lexer and parser</h2>
 <table cellspacing="1" cellpadding="5" border="1">
 <tr><td class="hd">Test name</td><td class="hd">Component</td><td class="hd">Exit code</td><td class="hd">Expected exit code</td><td class="hd">Result</td></tr>
 <tr>
@@ -145,18 +145,18 @@
 <td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">fibonacci</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">fibonacci</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">int</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">245</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">int</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">245</td>
+<td class="alert-success">245</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
 <td class="alert-success">single_comment</td>
@@ -180,18 +180,18 @@
 <td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">escape_codes_1</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">escape_codes_1</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">most_chars</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">most_chars</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
 <td class="alert-success">no_main</td>
@@ -201,11 +201,11 @@
 <td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">minimal</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">minimal</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
 <td class="alert-success">just_main</td>
@@ -215,18 +215,18 @@
 <td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">identifiers</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">identifiers</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">includes</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">includes</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
 <td class="alert-success">empty</td>
@@ -236,25 +236,25 @@
 <td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">while_loop_1</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">while_loop_1</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">while_loop_2</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">while_loop_2</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">while_loop_3</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">245</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">while_loop_3</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">245</td>
+<td class="alert-success">245</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
 <td class="alert-success">unterminated_stmt</td>
@@ -264,165 +264,165 @@
 <td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">function_application_1</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">245</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">function_application_1</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">245</td>
+<td class="alert-success">245</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">function_application_2</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">function_application_2</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">function_application_3</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">function_application_3</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">function_application_4</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">245</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">function_application_4</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">245</td>
+<td class="alert-success">245</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">function_application_5</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">function_application_5</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">count_to_n</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">count_to_n</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">declarations</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">declarations</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">missing_declarations</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">missing_declarations</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">double_declarations</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">double_declarations</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">reserved_keyword_as_identifier</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">245</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">reserved_keyword_as_identifier</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">245</td>
+<td class="alert-success">245</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">program_ends_with_single_comment</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">program_ends_with_single_comment</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">empty_functions_1</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">empty_functions_1</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">empty_functions_2</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">empty_functions_2</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">empty_comparison</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">245</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">empty_comparison</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">245</td>
+<td class="alert-success">245</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">else_if</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">else_if</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">arithmetic_1</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">arithmetic_1</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">arithmetic_2</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">arithmetic_2</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">broken_arithmetic</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">245</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">broken_arithmetic</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">245</td>
+<td class="alert-success">245</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">assignment_error</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">245</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">assignment_error</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">245</td>
+<td class="alert-success">245</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">all_syntax_categories</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">all_syntax_categories</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">all_syntax_categories_with_spaces</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">all_syntax_categories_with_spaces</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">all_syntax_categories_compact</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">all_syntax_categories_compact</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">type_error</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">type_error</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
 <td class="alert-success">identifier_missing_type</td>
@@ -432,74 +432,74 @@
 <td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">nested_conditional_statements</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">nested_conditional_statements</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">empty_conditional</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">245</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">empty_conditional</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">245</td>
+<td class="alert-success">245</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">if_empty_body</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">if_empty_body</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">statements_as_expressions</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">245</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">statements_as_expressions</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">245</td>
+<td class="alert-success">245</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">deep_body_nesting</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">deep_body_nesting</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">variable_initialization</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">245</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">variable_initialization</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">245</td>
+<td class="alert-success">245</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">returning_multiple_times</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">returning_multiple_times</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">else</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">245</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">else</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">245</td>
+<td class="alert-success">245</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">struct_wrong</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">245</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">struct_wrong</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">245</td>
+<td class="alert-success">245</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">struct_usage</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">struct_usage</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
 <td class="alert-success">struct_declaration</td>
@@ -509,344 +509,344 @@
 <td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">ternary_comparison</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">ternary_comparison</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">pointer_pointer</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">pointer_pointer</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">type_cast</td>
-<td class="alert-danger">parser</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">245</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">type_cast</td>
+<td class="alert-success">parser</td>
+<td class="alert-success">245</td>
+<td class="alert-success">245</td>
+<td class="alert-success">Pass</td>
 </tr>
 </table>
 <h2 class="page-header">Part 2: AST and sematic analysis</h2>
 <table cellspacing="1" cellpadding="5" border="1">
 <tr><td class="hd">Test name</td><td class="hd">Component</td><td class="hd">Exit code</td><td class="hd">Expected exit code</td><td class="hd">Result</td></tr>
 <tr>
-<td class="alert-danger">fibonacci</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">fibonacci</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">arithmetics</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">arithmetics</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">arithmetics_plus</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">arithmetics_plus</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">arithmetics_plus_mul</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">arithmetics_plus_mul</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">arithmetics_parentheses</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">arithmetics_parentheses</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">arithmetics_modulo</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">arithmetics_modulo</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">arithmetics_division</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">arithmetics_division</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">unary_operator_1</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">unary_operator_1</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
 <td class="alert-danger">unary_operator_2</td>
 <td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">function_call_1</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">function_call_2</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">return_1</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">return_2</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">return_3</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">return_4</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">nested_blocks_1</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">nested_blocks_2</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">blocks_in_sequence</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">assignment_1</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">assignment_2</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">print_s</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">read_c_1</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">read_c_2</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">read_i_1</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">read_i_2</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">print_c</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">print_i</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">while_loop</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">while_forever</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">if</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">if_else</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">if_else_if_else</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">if_if_else</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">procedure_declaration_1</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">procedure_declaration_2</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">procedure_declarations</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">global_variable_declaration</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">global_variable_declarations</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">local_variable_declaration</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">local_variable_declarations</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">includes</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">minimal</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">struct_use</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">strliteral</td>
-<td class="alert-danger">ast</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
-</tr>
-<tr>
-<td class="alert-danger">pointers_and_arrays_and_structs</td>
-<td class="alert-danger">ast</td>
 <td class="alert-danger">224</td>
 <td class="alert-danger">0</td>
 <td class="alert-danger">Fail</td>
+</tr>
+<tr>
+<td class="alert-success">function_call_1</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">function_call_2</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">return_1</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">return_2</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">return_3</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">return_4</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">nested_blocks_1</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">nested_blocks_2</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">blocks_in_sequence</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">assignment_1</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">assignment_2</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">print_s</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">read_c_1</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">read_c_2</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">read_i_1</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">read_i_2</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">print_c</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">print_i</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">while_loop</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">while_forever</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">if</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">if_else</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">if_else_if_else</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">if_if_else</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">procedure_declaration_1</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">procedure_declaration_2</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">procedure_declarations</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">global_variable_declaration</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">global_variable_declarations</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">local_variable_declaration</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">local_variable_declarations</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">includes</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">minimal</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">struct_use</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">strliteral</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
+</tr>
+<tr>
+<td class="alert-success">pointers_and_arrays_and_structs</td>
+<td class="alert-success">ast</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
 <td class="alert-danger">struct_decl</td>
@@ -856,340 +856,340 @@
 <td class="alert-danger">Fail</td>
 </tr>
 <tr>
-<td class="alert-danger">minimal</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">minimal</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">global_declaration_1</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">global_declaration_1</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">duplicate_global_declarations_1</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">duplicate_global_declarations_1</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">duplicate_global_declarations_2</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">duplicate_global_declarations_2</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">many_duplicate_global_declarations</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">many_duplicate_global_declarations</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">global_shadowing_1</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">global_shadowing_1</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">global_shadowing_2</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">global_shadowing_2</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">global_shadowing_3</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">global_shadowing_3</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">global_shadowing_4</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">global_shadowing_4</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">global_shadowing_5</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">global_shadowing_5</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">local_shadowing_1</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">local_shadowing_1</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">local_shadowing_2</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">local_shadowing_2</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">mutual_recursion</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">mutual_recursion</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">undeclared_function_1</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">undeclared_function_1</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">undeclared_function_2</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">undeclared_function_2</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">undeclared_parameter</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">undeclared_parameter</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">print_s</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">print_s</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">print_i</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">print_i</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">print_c</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">print_c</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">read_i</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">read_i</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">read_c</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">read_c</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">global_variable_assignment_1</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">global_variable_assignment_1</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">global_variable_assignment_2</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">global_variable_assignment_2</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">local_variable_assignment_1</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">local_variable_assignment_1</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">local_variable_assignment_2</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">local_variable_assignment_2</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">void_variable</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">void_variable</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">main_return_1</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">main_return_1</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">main_return_2</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">main_return_2</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">arity_mismatch_1</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">arity_mismatch_1</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">arity_mismatch_2</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">arity_mismatch_2</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">function_returns_1</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">function_returns_1</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">function_returns_2</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">function_returns_2</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">arithmetics_1</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">arithmetics_1</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">arithmetics_2</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">arithmetics_2</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">arithmetics_3</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">arithmetics_3</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">function_call_1</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">function_call_1</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">function_call_2</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">function_call_2</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">conditional_1</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">conditional_1</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">conditional_2</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">conditional_2</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">conditional_3</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">conditional_3</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">conditional_4</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">conditional_4</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">shadowing_6</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">shadowing_6</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">shadowing_7</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">shadowing_7</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">shadowing_8</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">shadowing_8</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">shadowing_9</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">0</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">shadowing_9</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">0</td>
+<td class="alert-success">0</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">shadowing_10</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">shadowing_10</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">shadowing_11</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">shadowing_11</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 <tr>
-<td class="alert-danger">shadowing_12</td>
-<td class="alert-danger">sem</td>
-<td class="alert-danger">1</td>
-<td class="alert-danger">240</td>
-<td class="alert-danger">Fail</td>
+<td class="alert-success">shadowing_12</td>
+<td class="alert-success">sem</td>
+<td class="alert-success">240</td>
+<td class="alert-success">240</td>
+<td class="alert-success">Pass</td>
 </tr>
 </table>
 </body>

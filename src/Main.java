@@ -1,5 +1,6 @@
 import ast.ASTPrinter;
 import ast.Program;
+import gen.CodeGenerator;
 import lexer.Scanner;
 import lexer.Token;
 import lexer.Tokeniser;
@@ -114,7 +115,21 @@ public class Main {
             } else
                 System.exit(PARSER_FAIL);
         } else if (mode == Mode.GEN) {
-            System.exit(MODE_FAIL);
+            Parser parser = new Parser(tokeniser);
+            Program programAst = parser.parse();
+            if (parser.getErrorCount() > 0)
+                System.exit(PARSER_FAIL);
+            SemanticAnalyzer sem = new SemanticAnalyzer();
+            int errors = sem.analyze(programAst);
+            if (errors > 0)
+                System.exit(SEM_FAIL);
+            CodeGenerator codegen = new CodeGenerator();
+            try {
+                codegen.emitProgram(programAst, outputFile);
+            } catch (FileNotFoundException e) {
+                System.out.println("File "+outputFile.toString()+" does not exist.");
+                System.exit(FILE_NOT_FOUND);
+            }
         } else {
         	System.exit(MODE_FAIL);
         }
