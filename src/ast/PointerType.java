@@ -15,6 +15,12 @@ public class PointerType implements Type {
                return true;
            }
        }
+        if (other instanceof ArrayType){
+            Type otherT = ((ArrayType) other).type;
+            if (otherT.equals(this.type)) {
+                return true;
+            }
+        }
        return false;
     }
 

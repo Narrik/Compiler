@@ -224,9 +224,9 @@ public class TypeCheckVisitor extends BaseSemanticVisitor<Type> {
 	    Type aT1 = a.expr1.accept(this);
         Type aT2 = a.expr2.accept(this);
         if (!aT1.equals(aT2)){
-            error("We can only assign between 2 expressions of the same type");
+            error("Cannot assign "+aT2+" to expression of type "+aT1);
         }
-        if (aT1 instanceof ArrayType || aT1 == BaseType.VOID || aT2 instanceof ArrayType || aT2 == BaseType.VOID){
+        if (aT1 instanceof ArrayType || aT1 == BaseType.VOID){
             error("Assign expressions cannot be of type void or ArrayType");
         }
         if (a.expr1 instanceof VarExpr || a.expr1 instanceof FieldAccessExpr ||
