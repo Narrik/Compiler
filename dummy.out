@@ -1,3 +1,7 @@
+main:.text
+li $a0, 0
+li $v0, 1
+syscall
 .text
 li $v0, 10
 syscall

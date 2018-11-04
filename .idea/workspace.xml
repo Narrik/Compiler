@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d26c8a3-606c-4ba5-818d-3141131c68ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/mipsStdLibFun.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ct-18-19/Main$Mode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ct-18-19/Main$Mode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ct-18-19/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ct-18-19/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ct-18-19/parser/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ct-18-19/parser/Parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/ArrayType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/ArrayType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ast/PointerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ast/PointerType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dummy.out" beforeDir="false" afterPath="$PROJECT_DIR$/dummy.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gen/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gen/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sem/TypeCheckVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sem/TypeCheckVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sem/NameAnalysisVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sem/NameAnalysisVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/mipsStdLibFun.c" beforeDir="false" afterPath="$PROJECT_DIR$/tests/mipsStdLibFun.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,7 +48,7 @@
           <entry key="c" value="49" />
           <entry key="h" value="4" />
           <entry key="iml" value="1" />
-          <entry key="java" value="313" />
+          <entry key="java" value="314" />
           <entry key="md" value="2" />
           <entry key="out" value="4" />
           <entry key="txt" value="16" />
@@ -64,7 +59,7 @@
         <counts>
           <entry key="C++" value="51" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="313" />
+          <entry key="JAVA" value="314" />
           <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="22" />
           <entry key="XML" value="2" />
@@ -72,16 +67,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="c" value="5121" />
-          <entry key="java" value="23667" />
+          <entry key="c" value="5123" />
+          <entry key="java" value="23796" />
           <entry key="out" value="8" />
           <entry key="txt" value="339" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C++" value="5119" />
-          <entry key="JAVA" value="23667" />
+          <entry key="C++" value="5121" />
+          <entry key="JAVA" value="23796" />
           <entry key="PLAIN_TEXT" value="349" />
         </counts>
       </usages-collector>
@@ -94,38 +89,20 @@
     <splitter split-orientation="horizontal" split-proportion="0.654046">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/gen/CodeGenerator.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="287">
-                  <caret line="169" column="41" selection-start-line="169" selection-start-column="41" selection-end-line="169" selection-end-column="41" />
+                <state relative-caret-position="343">
+                  <caret line="189" column="10" selection-start-line="189" selection-start-column="10" selection-end-line="189" selection-end-column="10" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#430#431#0" expanded="true" />
                     <element signature="e#479#480#0" expanded="true" />
                     <element signature="e#1831#1832#0" expanded="true" />
                     <element signature="e#1858#1859#0" expanded="true" />
-                    <element signature="e#2395#2396#0" expanded="true" />
-                    <element signature="e#2422#2423#0" expanded="true" />
+                    <element signature="e#2631#2632#0" expanded="true" />
+                    <element signature="e#2658#2659#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ast/FunCallExpr.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ast/VarExpr.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
                 </state>
               </provider>
             </entry>
@@ -133,17 +110,26 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/sem/TypeCheckVisitor.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-363">
+                <state relative-caret-position="3175">
                   <caret line="266" column="31" selection-start-line="266" selection-start-column="31" selection-end-line="266" selection-end-column="31" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tests/mipsStdLibFun.c">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="45">
-                  <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+                  <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/sem/NameAnalysisVisitor.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="405">
+                  <caret line="32" column="47" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
                 </state>
               </provider>
             </entry>
@@ -164,8 +150,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dummy.out">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret selection-end-line="7" />
+                <state relative-caret-position="75">
+                  <caret line="5" column="10" lean-forward="true" selection-end-line="7" />
                 </state>
               </provider>
             </entry>
@@ -270,7 +256,6 @@
         <option value="$PROJECT_DIR$/tests/deeptest.c" />
         <option value="$PROJECT_DIR$/tests/shadowing.c" />
         <option value="$PROJECT_DIR$/src/sem/SemanticAnalyzer.java" />
-        <option value="$PROJECT_DIR$/src/sem/NameAnalysisVisitor.java" />
         <option value="$PROJECT_DIR$/src/ast/StructType.java" />
         <option value="$PROJECT_DIR$/tests/typecheck.c" />
         <option value="$PROJECT_DIR$/tests/simpletypecheck.c" />
@@ -281,8 +266,9 @@
         <option value="$PROJECT_DIR$/src/ast/PointerType.java" />
         <option value="$PROJECT_DIR$/src/ast/ArrayType.java" />
         <option value="$PROJECT_DIR$/src/sem/TypeCheckVisitor.java" />
-        <option value="$PROJECT_DIR$/src/gen/CodeGenerator.java" />
+        <option value="$PROJECT_DIR$/src/sem/NameAnalysisVisitor.java" />
         <option value="$PROJECT_DIR$/tests/mipsStdLibFun.c" />
+        <option value="$PROJECT_DIR$/src/gen/CodeGenerator.java" />
       </list>
     </option>
   </component>
@@ -330,12 +316,6 @@
               <item name="ct-18-19" type="b2602c69:ProjectViewProjectNode" />
               <item name="ct-18-19" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ast" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ct-18-19" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ct-18-19" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="gen" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -361,7 +341,7 @@
     <property name="SearchEverywhereHistoryKey" value=";&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541299458032" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541302815660" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -466,7 +446,7 @@
       <workItem from="1540941243429" duration="3045000" />
       <workItem from="1541027577678" duration="1795000" />
       <workItem from="1541258122521" duration="192000" />
-      <workItem from="1541292013277" duration="6423000" />
+      <workItem from="1541292013277" duration="8965000" />
     </task>
     <servers />
   </component>
@@ -479,7 +459,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206050000" />
+    <option name="totallyTimeSpent" value="208592000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="13" y="23" width="1667" height="970" extended-state="0" />
@@ -784,9 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/minic-stdlib.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/grammar/ebnf.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="524">
@@ -798,13 +775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sem/NameAnalysisVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -842,13 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ast/VarExpr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ast/PointerType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -863,17 +826,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grammar/abstract_grammar.txt">
+    <entry file="file://$PROJECT_DIR$/src/ast/VarExpr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sem/TypeCheckVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-363">
-          <caret line="266" column="31" selection-start-line="266" selection-start-column="31" selection-end-line="266" selection-end-column="31" />
+        <state relative-caret-position="45">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -884,33 +840,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gen/CodeGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/sem/TypeCheckVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="169" column="41" selection-start-line="169" selection-start-column="41" selection-end-line="169" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#430#431#0" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#1831#1832#0" expanded="true" />
-            <element signature="e#1858#1859#0" expanded="true" />
-            <element signature="e#2395#2396#0" expanded="true" />
-            <element signature="e#2422#2423#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="3175">
+          <caret line="266" column="31" selection-start-line="266" selection-start-column="31" selection-end-line="266" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grammar/abstract_grammar.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/minic-stdlib.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sem/NameAnalysisVisitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="32" column="47" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/mipsStdLibFun.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dummy.out">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="7" />
+        <state relative-caret-position="75">
+          <caret line="5" column="10" lean-forward="true" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gen/CodeGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="189" column="10" selection-start-line="189" selection-start-column="10" selection-end-line="189" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#430#431#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#1831#1832#0" expanded="true" />
+            <element signature="e#1858#1859#0" expanded="true" />
+            <element signature="e#2631#2632#0" expanded="true" />
+            <element signature="e#2658#2659#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -30,7 +30,7 @@ public class NameAnalysisVisitor extends BaseSemanticVisitor<Void> {
         // int read_i();
         add(new FunDecl(BaseType.INT,"read_i",new ArrayList<VarDecl>(), new Block()));
         // void mcmalloc(int size);
-        add(new FunDecl(BaseType.VOID,"mcmalloc ",new ArrayList<VarDecl>(){{
+        add(new FunDecl(BaseType.VOID,"mcmalloc",new ArrayList<VarDecl>(){{
             add(new VarDecl(BaseType.INT, "size"));
         }}, new Block()));
     }};

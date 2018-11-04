@@ -58,19 +58,15 @@ public class CodeGenerator implements ASTVisitor<Register> {
     @Override
     public Register visitProgram(Program p) {
         // TODO: to complete
-        //writer.print("main: ");
-        /*for (StructTypeDecl std : p.structTypeDecls) {
+        for (StructTypeDecl std : p.structTypeDecls) {
             std.accept(this);
         }
         for (VarDecl vd : p.varDecls) {
             vd.accept(this);
-        }*/
+        }
         for (FunDecl fd : p.funDecls) {
             fd.accept(this);
         }
-        writer.println(text);
-        writer.println("li $v0, 10");
-        writer.println(syscall);
         return null;
     }
 
@@ -88,11 +84,20 @@ public class CodeGenerator implements ASTVisitor<Register> {
     @Override
     public Register visitFunDecl(FunDecl p) {
         // TODO: to complete
-        p.type.accept(this);
-        for (VarDecl vd : p.params){
-            vd.accept(this);
+        if (!(p.name.equals("print_s") || p.name.equals("print_i") || p.name.equals("print_c") ||
+              p.name.equals("read_c") || p.name.equals("read_i") || p.name.equals("mcmalloc"))){
+            writer.print(p.name + ":");
+            p.type.accept(this);
+            for (VarDecl vd : p.params) {
+                vd.accept(this);
+            }
+            p.block.accept(this);
+            if (p.name.equals("main")){
+                writer.println(text);
+                writer.println("li $v0, 10");
+                writer.println(syscall);
+            }
         }
-        p.block.accept(this);
         return null;
     }
 
@@ -182,6 +187,9 @@ public class CodeGenerator implements ASTVisitor<Register> {
     @Override
     public Register visitBinOp(BinOp bo) {
         // TODO: to complete
+        Register lhsReg = bo.lhs.accept(this);
+        Register rhsReg = bo.rhs.accept(this);
+        Register result = getRegister();
         return null;
     }
 
