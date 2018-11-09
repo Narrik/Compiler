@@ -71,16 +71,17 @@ public class CodeGenerator implements ASTVisitor<Register> {
     private int funCount = 0;
     private int fpOffset = 0;
     private int trueCount = 0;
+    private int startCount = 0;
     private int endCount = 0;
     private int elseCount = 0;
 
 
     @Override
     public Register visitProgram(Program p) {
+        writer.println(data);
         for (StructTypeDecl std : p.structTypeDecls) {
             std.accept(this);
         }
-        writer.println(data);
         for (VarDecl vd : p.varDecls) {
 
             // if variable is an int, char or pointer
@@ -103,6 +104,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
                 //TODO: STRUCTS
             }
         }
+        writer.println(text);
         for (FunDecl fd : p.funDecls) {
             fd.accept(this);
         }
@@ -149,32 +151,25 @@ public class CodeGenerator implements ASTVisitor<Register> {
               p.name.equals("read_c") || p.name.equals("read_i") || p.name.equals("mcmalloc"))){
             // main cannot be shadowed and doesn't need numbering
             if (p.name.equals("main")){
-                writer.print("main:");
+                p.funLoc = "main";
+                writer.print(p.funLoc+": ");
+                writer.println("move $fp, $sp");
+
+                p.block.accept(this);
             } else {
-                writer.print(p.name + funCount + ":");
+                p.funLoc = p.name + funCount;
+                funCount++;
+                writer.print(p.funLoc + ": ");
+                writer.println("move $fp, $sp");
+
+                p.block.accept(this);
+
+                writer.println("jr $ra");
             }
-            funCount++;
-            writer.println(text);
-            writer.println("move $fp, $sp");
-            p.block.accept(this);
         }
         return null;
     }
 
-
-    // TYPES
-    @Override
-    public Register visitBaseType(BaseType bt) { return null; }
-
-    @Override
-    public Register visitPointerType(PointerType pt) { return null; }
-
-
-    @Override
-    public Register visitStructType(StructType st) { return null; }
-
-    @Override
-    public Register visitArrayType(ArrayType at) { return null; }
 
 
     // EXPRESSIONS
@@ -271,7 +266,18 @@ public class CodeGenerator implements ASTVisitor<Register> {
             freeRegister(amount);
             return Register.v0;
         }
-        return null;
+        for (VarDecl vd : fc.fd.params) {
+            if (vd.type == BaseType.INT || vd.type == BaseType.CHAR|| vd.type instanceof PointerType ){
+                writer.println("addi $sp, $sp, -4");
+                vd.varLoc = "-"+fpOffset+"($fp)";
+                fpOffset += 4;
+                //TODO structs
+            }
+        }
+        writer.println("jal "+fc.fd.funLoc);
+
+
+        return Register.v0;
     }
 
     @Override
@@ -307,7 +313,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
                       writer.println("li "+result+", 0");
                       writer.println("j end"+endCount);
                       writer.println("true"+trueCount+": li "+result+", 1"); trueCount++;
-                      writer.print("end"+endCount+": "); endCount++;
+                      writer.println("end"+endCount+": "); endCount++;
                       freeRegister(rhsReg); break;
 
             case LT:  rhsReg = bo.rhs.accept(this);
@@ -315,7 +321,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
                       writer.println("li "+result+", 0");
                       writer.println("j end"+endCount);
                       writer.println("true"+trueCount+": li "+result+", 1"); trueCount++;
-                      writer.print("end"+endCount+": "); endCount++;
+                      writer.println("end"+endCount+": "); endCount++;
                       freeRegister(rhsReg); break;
 
             case GE : rhsReg = bo.rhs.accept(this);
@@ -323,7 +329,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
                       writer.println("li "+result+", 0");
                       writer.println("j end"+endCount);
                       writer.println("true"+trueCount+": li "+result+", 1"); trueCount++;
-                      writer.print("end"+endCount+": "); endCount++;
+                      writer.println("end"+endCount+": "); endCount++;
                       freeRegister(rhsReg); break;
 
             case LE : rhsReg = bo.rhs.accept(this);
@@ -331,7 +337,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
                       writer.println("li "+result+", 0");
                       writer.println("j end"+endCount);
                       writer.println("true"+trueCount+": li "+result+", 1"); trueCount++;
-                      writer.print("end"+endCount+": "); endCount++;
+                      writer.println("end"+endCount+": "); endCount++;
                       freeRegister(rhsReg); break;
 
             case NE : rhsReg = bo.rhs.accept(this);
@@ -339,7 +345,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
                       writer.println("li "+result+", 0");
                       writer.println("j end"+endCount);
                       writer.println("true"+trueCount+": li "+result+", 1"); trueCount++;
-                      writer.print("end"+endCount+": "); endCount++;
+                      writer.println("end"+endCount+": "); endCount++;
                       freeRegister(rhsReg); break;
 
             case EQ : rhsReg = bo.rhs.accept(this);
@@ -347,7 +353,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
                       writer.println("li "+result+", 0");
                       writer.println("j end"+endCount);
                       writer.println("true"+trueCount+": li "+result+", 1"); trueCount++;
-                      writer.print("end"+endCount+": "); endCount++;
+                      writer.println("end"+endCount+": "); endCount++;
                       freeRegister(rhsReg); break;
 
             case OR : String trueStr = "true"+trueCount; trueCount++;
@@ -360,7 +366,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
                       writer.println("li "+result+", 0");
                       writer.println("j end"+endCount);
                       writer.println(trueStr+": li "+result+", 1");
-                      writer.print("end"+endCount+": "); endCount++;
+                      writer.println("end"+endCount+": "); endCount++;
                       freeRegister(rhsReg); break;
 
             case AND: String falseStr = "false"+trueCount;
@@ -370,7 +376,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
                       writer.println("li "+result+", 1");
                       writer.println("j end"+endCount);
                       writer.println(falseStr+": li "+result+", 0"); trueCount++;
-                      writer.print("end"+endCount+": "); endCount++;
+                      writer.println("end"+endCount+": "); endCount++;
                       freeRegister(rhsReg); break;
         }
         freeRegister(lhsReg);
@@ -410,10 +416,25 @@ public class CodeGenerator implements ASTVisitor<Register> {
     }
 
     @Override
-    public Register visitTypecastExpr(TypecastExpr tc) { return null; }
+    public Register visitTypecastExpr(TypecastExpr tc) {
+        return tc.expr.accept(this);
+    }
 
 
     // STATEMENTS
+    @Override
+    public Register visitBlock(Block b) {
+        // TODO: to complete
+        fpOffset = 0;
+        for (VarDecl vd : b.params){
+            vd.accept(this);
+        }
+        for (Stmt stmts : b.stmts){
+            stmts.accept(this);
+        }
+        return null;
+    }
+
     @Override
     public Register visitExprStmt(ExprStmt e) {
         e.expr.accept(this);
@@ -422,23 +443,32 @@ public class CodeGenerator implements ASTVisitor<Register> {
 
     @Override
     public Register visitWhile(While w) {
-        // TODO: to complete
+        String endStr = "end"+endCount; endCount++;
+        String whileStr = "while"+startCount; startCount++;
+        writer.println(whileStr+": ");
+        Register truthValue = w.expr.accept(this);
+        writer.println("beqz "+ truthValue +", "+endStr);
+        freeRegister(truthValue);
+        w.stmt.accept(this);
+        writer.println("j "+whileStr);
+        writer.println(endStr+": ");
         return null;
     }
 
     @Override
     public Register visitIf(If i) {
-        Register truthValue = i.expr.accept(this);
         String elseStr = "else"+elseCount; elseCount++;
         String endStr = "end"+endCount; endCount++;
+        Register truthValue = i.expr.accept(this);
         writer.println("beqz "+ truthValue +", "+elseStr);
+        freeRegister(truthValue);
         i.stmt1.accept(this);
         writer.println("j "+endStr);
         writer.println(elseStr+":");
         if (i.stmt2 != null){
             i.stmt2.accept(this);
         }
-        writer.print(endStr+": ");
+        writer.println(endStr+": ");
         return null;
     }
 
@@ -460,20 +490,29 @@ public class CodeGenerator implements ASTVisitor<Register> {
 
     @Override
     public Register visitReturn(Return r) {
-        // TODO: to complete
+        // TODO: structs
+        if (r.expr == null){
+            writer.println("li $v0, 0");
+        } else {
+            Register ret = r.expr.accept(this);
+            writer.println("move $v0, "+ret);
+            freeRegister(ret);
+        }
         return null;
     }
 
+
+    // TYPES
     @Override
-    public Register visitBlock(Block b) {
-        // TODO: to complete
-        fpOffset = 0;
-        for (VarDecl vd : b.params){
-            vd.accept(this);
-        }
-        for (Stmt stmts : b.stmts){
-            stmts.accept(this);
-        }
-        return null;
-    }
+    public Register visitBaseType(BaseType bt) { return null; }
+
+    @Override
+    public Register visitPointerType(PointerType pt) { return null; }
+
+    @Override
+    public Register visitStructType(StructType st) { return null; }
+
+    @Override
+    public Register visitArrayType(ArrayType at) { return null; }
+
 }

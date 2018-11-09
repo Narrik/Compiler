@@ -1,21 +1,108 @@
 .data
-b: .space 4
-a: .space 4
-main:.text
-move $fp, $sp
-la $t9, b
-li $t8, 5
+.text
+main: move $fp, $sp
+addi $sp, $sp, -4
+addi $sp, $sp, -4
+addi $sp, $sp, -4
+addi $sp, $sp, -4
+addi $sp, $sp, -4
+addi $sp, $sp, -4
+la $t9, -0($fp)
+li $v0, 5
+syscall
+sw $v0, ($t9)
+la $t9, -4($fp)
+li $t8, 0
 sw $t8, ($t9)
-la $t8, a
-li $t9, 6
+la $t8, -8($fp)
+li $t9, 1
 sw $t9, ($t8)
-la $t9, b
-la $t8, a
-lw $t8, ($t8)
-sw $t8, ($t9)
-la $t8, b
-lw $t8, ($t8)
-addi $a0, $t8, 0
+.data
+var0: .asciiz "First "
+.text
+la $t9, var0
+la $a0, ($t9)
+li $v0, 4
+syscall
+li $v0, 0
+la $t9, -0($fp)
+lw $t9, ($t9)
+addi $a0, $t9, 0
 li $v0, 1
 syscall
 li $v0, 0
+.data
+var1: .asciiz " terms of Fibonacci series are : "
+.text
+la $t9, var1
+la $a0, ($t9)
+li $v0, 4
+syscall
+li $v0, 0
+la $t9, -16($fp)
+li $t8, 0
+sw $t8, ($t9)
+while0: 
+la $t8, -16($fp)
+lw $t8, ($t8)
+la $s7, -0($fp)
+lw $s7, ($s7)
+blt $t8, $s7, true0
+li $t9, 0
+j end1
+true0: li $t9, 1
+end1: 
+beqz $t9, end0
+la $t9, -16($fp)
+lw $t9, ($t9)
+li $s7, 1
+ble $t9, $s7, true1
+li $t8, 0
+j end3
+true1: li $t8, 1
+end3: 
+beqz $t8, else0
+la $t8, -12($fp)
+la $t9, -16($fp)
+lw $t9, ($t9)
+sw $t9, ($t8)
+j end2
+else0:
+la $t9, -12($fp)
+la $t8, -4($fp)
+lw $t8, ($t8)
+la $s6, -8($fp)
+lw $s6, ($s6)
+add $s7, $t8, $s6
+sw $s7, ($t9)
+la $s7, -4($fp)
+la $t9, -8($fp)
+lw $t9, ($t9)
+sw $t9, ($s7)
+la $t9, -8($fp)
+la $s7, -12($fp)
+lw $s7, ($s7)
+sw $s7, ($t9)
+end2: 
+la $s7, -12($fp)
+lw $s7, ($s7)
+addi $a0, $s7, 0
+li $v0, 1
+syscall
+li $v0, 0
+.data
+var2: .asciiz " "
+.text
+la $s7, var2
+la $a0, ($s7)
+li $v0, 4
+syscall
+li $v0, 0
+la $s7, -16($fp)
+la $t9, -16($fp)
+lw $t9, ($t9)
+li $s6, 1
+add $t8, $t9, $s6
+sw $t8, ($s7)
+j while0
+end0: 
