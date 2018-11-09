@@ -1,7 +1,21 @@
+.data
+b: .space 4
+a: .space 4
 main:.text
-li $a0, 0
+move $fp, $sp
+la $t9, b
+li $t8, 5
+sw $t8, ($t9)
+la $t8, a
+li $t9, 6
+sw $t9, ($t8)
+la $t9, b
+la $t8, a
+lw $t8, ($t8)
+sw $t8, ($t9)
+la $t8, b
+lw $t8, ($t8)
+addi $a0, $t8, 0
 li $v0, 1
 syscall
-.text
-li $v0, 10
-syscall
+li $v0, 0

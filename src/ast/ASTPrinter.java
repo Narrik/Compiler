@@ -6,6 +6,23 @@ public class ASTPrinter implements ASTVisitor<Void> {
 
     private PrintWriter writer;
 
+    private String printChar(char c){
+        StringBuilder sb = new StringBuilder();
+        switch (c){
+            case('\t'): sb.append("\\"); sb.append("t"); break;
+            case('\b'): sb.append("\\"); sb.append("b"); break;
+            case('\n'): sb.append("\\"); sb.append("n"); break;
+            case('\r'): sb.append("\\"); sb.append("r"); break;
+            case('\f'): sb.append("\\"); sb.append("f"); break;
+            case('\''): sb.append("\\"); sb.append("'"); break;
+            case('\"'): sb.append("\\"); sb.append("\""); break;
+            case('\\'): sb.append("\\"); sb.append("\\"); break;
+            case('\0'): sb.append("\\"); sb.append("0"); break;
+            default: sb.append(c);
+        }
+        return sb.toString();
+    }
+
     public ASTPrinter(PrintWriter writer) {
             this.writer = writer;
     }
@@ -62,7 +79,7 @@ public class ASTPrinter implements ASTVisitor<Void> {
     @Override
     public Void visitChrLiteral(ChrLiteral c) {
         writer.print("ChrLiteral(");
-        writer.print(c.value);
+        writer.print(printChar(c.value));
         writer.print(")");
         return null;
     }

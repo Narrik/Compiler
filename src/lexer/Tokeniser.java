@@ -188,6 +188,8 @@ public class Tokeniser {
                             break;
                         case '\\':
                             sb.append(c1);
+                            sb.append("\\");
+                            scanner.next();
                             break;
                         case '0':
                             sb.append(c1);

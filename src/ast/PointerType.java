@@ -10,10 +10,7 @@ public class PointerType implements Type {
 
     public boolean equals(Object other){
        if (other instanceof PointerType){
-           Type otherT = ((PointerType) other).type;
-           if (otherT.equals(this.type)) {
                return true;
-           }
        }
         if (other instanceof ArrayType){
             Type otherT = ((ArrayType) other).type;

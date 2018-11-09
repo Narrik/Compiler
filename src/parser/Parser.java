@@ -518,6 +518,20 @@ public class Parser {
         else {
             Token n = expect(TokenClass.CHAR_LITERAL);
             char c = n.data.charAt(0);
+            if (n.data.charAt(0) == '\\') {
+                switch (n.data.charAt(1)) {
+                    case 't': c = '\t'; break;
+                    case 'b': c = '\b'; break;
+                    case 'n': c = '\n'; break;
+                    case 'r': c = '\r'; break;
+                    case 'f': c = '\f'; break;
+                    case '\'': c = '\''; break;
+                    case '"': c = '\"'; break;
+                    case '\\': c = '\\'; break;
+                    case '0': c = '\0'; break;
+                    default: break;
+                }
+            }
             return new ChrLiteral(c);
         }
     }

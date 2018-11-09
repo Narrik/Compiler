@@ -29,12 +29,11 @@ public class NameAnalysisVisitor extends BaseSemanticVisitor<Void> {
         add(new FunDecl(BaseType.CHAR,"read_c",new ArrayList<VarDecl>(), new Block()));
         // int read_i();
         add(new FunDecl(BaseType.INT,"read_i",new ArrayList<VarDecl>(), new Block()));
-        // void mcmalloc(int size);
-        add(new FunDecl(BaseType.VOID,"mcmalloc",new ArrayList<VarDecl>(){{
+        // void* mcmalloc(int size);
+        add(new FunDecl(new PointerType(BaseType.VOID),"mcmalloc",new ArrayList<VarDecl>(){{
             add(new VarDecl(BaseType.INT, "size"));
         }}, new Block()));
     }};
-
 
     @Override
     public Void visitProgram(Program p) {
