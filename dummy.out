@@ -1,108 +1,260 @@
 .data
 .text
+minus0: move $fp, $sp
+argument
+argument
+la $t9, +88($fp)
+lw $t9, ($t9)
+la $s7, +84($fp)
+lw $s7, ($s7)
+sub $t8, $t9, $s7
+move $v0, $t8
+move $sp, $fp
+jr $ra
+plus1: move $fp, $sp
+argument
+argument
+addi $sp, $sp, -4
+la $t8, +88($fp)
+lw $t8, ($t8)
+sw $t8, -0($fp)
+addi $sp, $sp, -4
+la $t8, +84($fp)
+lw $t8, ($t8)
+sw $t8, -4($fp)
+addi $sp, $sp, -4
+sw $t0, -8($fp)
+addi $sp, $sp, -4
+sw $t1, -12($fp)
+addi $sp, $sp, -4
+sw $t2, -16($fp)
+addi $sp, $sp, -4
+sw $t3, -20($fp)
+addi $sp, $sp, -4
+sw $t4, -24($fp)
+addi $sp, $sp, -4
+sw $t5, -28($fp)
+addi $sp, $sp, -4
+sw $t6, -32($fp)
+addi $sp, $sp, -4
+sw $t7, -36($fp)
+addi $sp, $sp, -4
+sw $s0, -40($fp)
+addi $sp, $sp, -4
+sw $s1, -44($fp)
+addi $sp, $sp, -4
+sw $s2, -48($fp)
+addi $sp, $sp, -4
+sw $s3, -52($fp)
+addi $sp, $sp, -4
+sw $s4, -56($fp)
+addi $sp, $sp, -4
+sw $s5, -60($fp)
+addi $sp, $sp, -4
+sw $s6, -64($fp)
+addi $sp, $sp, -4
+sw $s7, -68($fp)
+addi $sp, $sp, -4
+sw $t8, -72($fp)
+addi $sp, $sp, -4
+sw $t9, -76($fp)
+addi $sp, $sp, -4
+sw $fp, -80($fp)
+addi $sp, $sp, -4
+sw $ra, -84($fp)
+jal minus0
+lw $ra, 4($fp)
+lw $fp, 8($fp)
+lw $t0, 12($fp)
+lw $t1, 16($fp)
+lw $t2, 20($fp)
+lw $t3, 24($fp)
+lw $t4, 28($fp)
+lw $t5, 32($fp)
+lw $t6, 36($fp)
+lw $t7, 40($fp)
+lw $s0, 44($fp)
+lw $s1, 48($fp)
+lw $s2, 52($fp)
+lw $s3, 56($fp)
+lw $s4, 60($fp)
+lw $s5, 64($fp)
+lw $s6, 68($fp)
+lw $s7, 72($fp)
+lw $t8, 76($fp)
+lw $t9, 80($fp)
+addi $sp, $sp, -4
+la $t9, +88($fp)
+lw $t9, ($t9)
+sw $t9, -88($fp)
+addi $sp, $sp, -4
+la $t9, +84($fp)
+lw $t9, ($t9)
+sw $t9, -92($fp)
+addi $sp, $sp, -4
+sw $t0, -96($fp)
+addi $sp, $sp, -4
+sw $t1, -100($fp)
+addi $sp, $sp, -4
+sw $t2, -104($fp)
+addi $sp, $sp, -4
+sw $t3, -108($fp)
+addi $sp, $sp, -4
+sw $t4, -112($fp)
+addi $sp, $sp, -4
+sw $t5, -116($fp)
+addi $sp, $sp, -4
+sw $t6, -120($fp)
+addi $sp, $sp, -4
+sw $t7, -124($fp)
+addi $sp, $sp, -4
+sw $s0, -128($fp)
+addi $sp, $sp, -4
+sw $s1, -132($fp)
+addi $sp, $sp, -4
+sw $s2, -136($fp)
+addi $sp, $sp, -4
+sw $s3, -140($fp)
+addi $sp, $sp, -4
+sw $s4, -144($fp)
+addi $sp, $sp, -4
+sw $s5, -148($fp)
+addi $sp, $sp, -4
+sw $s6, -152($fp)
+addi $sp, $sp, -4
+sw $s7, -156($fp)
+addi $sp, $sp, -4
+sw $t8, -160($fp)
+addi $sp, $sp, -4
+sw $t9, -164($fp)
+addi $sp, $sp, -4
+sw $fp, -168($fp)
+addi $sp, $sp, -4
+sw $ra, -172($fp)
+jal minus0
+lw $ra, 4($fp)
+lw $fp, 8($fp)
+lw $t0, 12($fp)
+lw $t1, 16($fp)
+lw $t2, 20($fp)
+lw $t3, 24($fp)
+lw $t4, 28($fp)
+lw $t5, 32($fp)
+lw $t6, 36($fp)
+lw $t7, 40($fp)
+lw $s0, 44($fp)
+lw $s1, 48($fp)
+lw $s2, 52($fp)
+lw $s3, 56($fp)
+lw $s4, 60($fp)
+lw $s5, 64($fp)
+lw $s6, 68($fp)
+lw $s7, 72($fp)
+lw $t8, 76($fp)
+lw $t9, 80($fp)
+add $t8, $v0, $v0
+move $v0, $t8
+move $sp, $fp
+jr $ra
 main: move $fp, $sp
 addi $sp, $sp, -4
 addi $sp, $sp, -4
-addi $sp, $sp, -4
-addi $sp, $sp, -4
-addi $sp, $sp, -4
-addi $sp, $sp, -4
-la $t9, -0($fp)
-li $v0, 5
-syscall
-sw $v0, ($t9)
-la $t9, -4($fp)
-li $t8, 0
-sw $t8, ($t9)
-la $t8, -8($fp)
-li $t9, 1
+la $t8, -0($fp)
+li $t9, 5
 sw $t9, ($t8)
-.data
-var0: .asciiz "First "
-.text
-la $t9, var0
-la $a0, ($t9)
-li $v0, 4
-syscall
-li $v0, 0
-la $t9, -0($fp)
-lw $t9, ($t9)
-addi $a0, $t9, 0
+la $t9, -4($fp)
+li $t8, 6
+sw $t8, ($t9)
+addi $sp, $sp, -4
+la $t8, -0($fp)
+lw $t8, ($t8)
+sw $t8, -8($fp)
+addi $sp, $sp, -4
+la $t8, -4($fp)
+lw $t8, ($t8)
+sw $t8, -12($fp)
+addi $sp, $sp, -4
+sw $t0, -16($fp)
+addi $sp, $sp, -4
+sw $t1, -20($fp)
+addi $sp, $sp, -4
+sw $t2, -24($fp)
+addi $sp, $sp, -4
+sw $t3, -28($fp)
+addi $sp, $sp, -4
+sw $t4, -32($fp)
+addi $sp, $sp, -4
+sw $t5, -36($fp)
+addi $sp, $sp, -4
+sw $t6, -40($fp)
+addi $sp, $sp, -4
+sw $t7, -44($fp)
+addi $sp, $sp, -4
+sw $s0, -48($fp)
+addi $sp, $sp, -4
+sw $s1, -52($fp)
+addi $sp, $sp, -4
+sw $s2, -56($fp)
+addi $sp, $sp, -4
+sw $s3, -60($fp)
+addi $sp, $sp, -4
+sw $s4, -64($fp)
+addi $sp, $sp, -4
+sw $s5, -68($fp)
+addi $sp, $sp, -4
+sw $s6, -72($fp)
+addi $sp, $sp, -4
+sw $s7, -76($fp)
+addi $sp, $sp, -4
+sw $t8, -80($fp)
+addi $sp, $sp, -4
+sw $t9, -84($fp)
+addi $sp, $sp, -4
+sw $fp, -88($fp)
+addi $sp, $sp, -4
+sw $ra, -92($fp)
+jal plus1
+lw $ra, 4($fp)
+lw $fp, 8($fp)
+lw $t0, 12($fp)
+lw $t1, 16($fp)
+lw $t2, 20($fp)
+lw $t3, 24($fp)
+lw $t4, 28($fp)
+lw $t5, 32($fp)
+lw $t6, 36($fp)
+lw $t7, 40($fp)
+lw $s0, 44($fp)
+lw $s1, 48($fp)
+lw $s2, 52($fp)
+lw $s3, 56($fp)
+lw $s4, 60($fp)
+lw $s5, 64($fp)
+lw $s6, 68($fp)
+lw $s7, 72($fp)
+lw $t8, 76($fp)
+lw $t9, 80($fp)
+addi $a0, $v0, 0
 li $v0, 1
 syscall
 li $v0, 0
-.data
-var1: .asciiz " terms of Fibonacci series are : "
-.text
-la $t9, var1
-la $a0, ($t9)
-li $v0, 4
+li $t8, 42
+addi $a0, $t8, 0
+li $v0, 1
 syscall
 li $v0, 0
-la $t9, -16($fp)
-li $t8, 0
-sw $t8, ($t9)
-while0: 
-la $t8, -16($fp)
-lw $t8, ($t8)
-la $s7, -0($fp)
-lw $s7, ($s7)
-blt $t8, $s7, true0
+li $t8, 1
+li $s7, 1
+beq $t8, $s7, true0
 li $t9, 0
 j end1
 true0: li $t9, 1
 end1: 
-beqz $t9, end0
-la $t9, -16($fp)
-lw $t9, ($t9)
-li $s7, 1
-ble $t9, $s7, true1
-li $t8, 0
-j end3
-true1: li $t8, 1
-end3: 
-beqz $t8, else0
-la $t8, -12($fp)
-la $t9, -16($fp)
-lw $t9, ($t9)
-sw $t9, ($t8)
-j end2
+beqz $t9, else0
+addi $sp, $sp, -4
+la $t9, -0($fp)
+li $t8, 7
+sw $t8, ($t9)
+j end0
 else0:
-la $t9, -12($fp)
-la $t8, -4($fp)
-lw $t8, ($t8)
-la $s6, -8($fp)
-lw $s6, ($s6)
-add $s7, $t8, $s6
-sw $s7, ($t9)
-la $s7, -4($fp)
-la $t9, -8($fp)
-lw $t9, ($t9)
-sw $t9, ($s7)
-la $t9, -8($fp)
-la $s7, -12($fp)
-lw $s7, ($s7)
-sw $s7, ($t9)
-end2: 
-la $s7, -12($fp)
-lw $s7, ($s7)
-addi $a0, $s7, 0
-li $v0, 1
-syscall
-li $v0, 0
-.data
-var2: .asciiz " "
-.text
-la $s7, var2
-la $a0, ($s7)
-li $v0, 4
-syscall
-li $v0, 0
-la $s7, -16($fp)
-la $t9, -16($fp)
-lw $t9, ($t9)
-li $s6, 1
-add $t8, $t9, $s6
-sw $t8, ($s7)
-j while0
 end0: 
