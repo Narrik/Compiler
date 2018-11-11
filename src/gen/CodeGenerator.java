@@ -455,10 +455,28 @@ public class CodeGenerator implements ASTVisitor<Register> {
     @Override
     public Register visitArrayAccessExpr(ArrayAccessExpr aa) {
         // TODO: to complete
-        //Register arrayAddress = getRegister();
-        //writer.println("la "+arrayAddress+", "+((VarExpr) aa.array).vd.varLoc);
+        Register arrayAddress = getRegister();
+        Register arrayIndex = aa.index.accept(this);
+        Register value = getRegister();
+        // if our array isn't of type char, we need to multiply the index by 4 and use sw instead of sb
+        VarDecl vd =((VarExpr) aa.array).vd;
+        if (((ArrayType) vd.type).type != BaseType.CHAR){
+            Register num = getRegister();
+            writer.println("li "+num+", 4");
+            writer.println("mul "+arrayIndex+", "+arrayIndex+", "+num);
+            freeRegister(num);
+            writer.println("la "+arrayAddress+", "+((VarExpr) aa.array).vd.varLoc);
+            writer.println("add "+arrayAddress+", "+arrayAddress+", "+arrayIndex);
+            writer.println("lw "+value+", ("+arrayAddress+")");
+        } else {
+            writer.println("la "+arrayAddress+", "+((VarExpr) aa.array).vd.varLoc);
+            writer.println("add "+arrayAddress+", "+arrayAddress+", "+arrayIndex);
+            writer.println("lb "+value+", ("+arrayAddress+")");
+        }
 
-        return null;
+        freeRegister(arrayAddress);
+        freeRegister(arrayIndex);
+        return value;
     }
 
     @Override
@@ -470,7 +488,11 @@ public class CodeGenerator implements ASTVisitor<Register> {
     @Override
     public Register visitValueAtExpr(ValueAtExpr va) {
         // TODO: to complete
-        return null;
+        Register value = getRegister();
+        String valueAddress = ((VarExpr) va.expr).vd.varLoc;
+        writer.println("la "+value+", "+valueAddress);
+        writer.println("lw "+value+", ("+value+")");
+        return value;
     }
 
     @Override
@@ -540,13 +562,46 @@ public class CodeGenerator implements ASTVisitor<Register> {
     @Override
     public Register visitAssign(Assign a) {
         // TODO: to complete
+        int isChar = 0;
         Register expr1Address = getRegister();
         if (a.expr1 instanceof VarExpr){
             writer.println("la "+expr1Address+", "+((VarExpr) a.expr1).vd.varLoc);
         }
-        // TODO field,array,valueat expressions
+
+        if(a.expr1 instanceof ArrayAccessExpr){
+            String arrayAddress = ((VarExpr)((ArrayAccessExpr) a.expr1).array).vd.varLoc;
+            Register arrayIndex = ((ArrayAccessExpr) a.expr1).index.accept(this);
+            // if our array isn't of type char, we need to multiply the index by 4
+            VarDecl vd =((VarExpr)((ArrayAccessExpr) a.expr1).array).vd;
+            if (((ArrayType) vd.type).type != BaseType.CHAR){
+                Register num = getRegister();
+                writer.println("li "+num+", 4");
+                writer.println("mul "+arrayIndex+", "+arrayIndex+", "+num);
+                freeRegister(num);
+                writer.println("la "+expr1Address+", "+arrayAddress);
+                writer.println("add "+expr1Address+", "+expr1Address+", "+arrayIndex);
+                freeRegister(arrayIndex);
+            } else {
+                isChar = 1;
+                writer.println("la "+expr1Address+", "+arrayAddress);
+                writer.println("add "+expr1Address+", "+expr1Address+", "+arrayIndex);
+                freeRegister(arrayIndex);
+            }
+        }
+
+        if (a.expr1 instanceof ValueAtExpr){
+            String valueAddress = ((VarExpr) ((ValueAtExpr) a.expr1).expr).vd.varLoc;
+            writer.println("la "+expr1Address+", "+valueAddress);
+            writer.println("lw "+expr1Address+", ("+expr1Address+")");
+        }
+
+        // TODO field,valueat expressions
         Register expr2 = a.expr2.accept(this);
-        writer.println("sw "+expr2+", ("+expr1Address+")");
+        if (isChar == 1){
+            writer.println("sb "+expr2+", ("+expr1Address+")");
+        } else {
+            writer.println("sw " + expr2 + ", (" + expr1Address + ")");
+        }
         freeRegister(expr1Address);
         freeRegister(expr2);
         return null;
