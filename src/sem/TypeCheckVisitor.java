@@ -252,7 +252,7 @@ public class TypeCheckVisitor extends BaseSemanticVisitor<Type> {
             if (rT.equals(curFunType)){
                 return null;
             } else {
-                error("Return type and function type must match");
+                error("Return type "+rT+" and function type  "+curFunType+" don't match");
                 return null;
             }
         }

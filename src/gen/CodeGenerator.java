@@ -85,7 +85,6 @@ public class CodeGenerator implements ASTVisitor<Register> {
             std.accept(this);
         }
         for (VarDecl vd : p.varDecls) {
-
             // if variable is an int, char or pointer
             if (vd.type == BaseType.INT || vd.type == BaseType.CHAR|| vd.type instanceof PointerType ){
                 writer.println(vd.varName + ": .space 4");
@@ -120,28 +119,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
 
     @Override
     public Register visitVarDecl(VarDecl vd) {
-        // TODO: to complete
-        // if variable is an int, char or pointer
-        if (vd.type == BaseType.INT || vd.type == BaseType.CHAR|| vd.type instanceof PointerType ){
-            writer.println("addi $sp, $sp, -4");
-            vd.varLoc = "-"+fpOffset+"($fp)";
-            fpOffset += 4;
-
-            // if variable is an array type
-        } else if (vd.type instanceof ArrayType){
-            int elements = (((ArrayType) vd.type).elements)*4;
-            // if we have an array of chars, each char only requires 1 byte, but need to word align
-            if (((ArrayType) vd.type).type == BaseType.CHAR){
-                elements = ((ArrayType) vd.type).elements;
-                elements += 4-(elements % 4);
-            }
-            writer.println("addi $sp, $sp, -"+elements);
-            vd.varLoc = "-"+fpOffset+"($fp)";
-            fpOffset += elements;
-
-        } else if (vd.type instanceof StructType){
-            //TODO: STRUCTS
-        }
+        // handled by VarDeclarator
         return null;
     }
 
@@ -151,40 +129,72 @@ public class CodeGenerator implements ASTVisitor<Register> {
         // exclude built in functions
         if (!(p.name.equals("print_s") || p.name.equals("print_i") || p.name.equals("print_c") ||
               p.name.equals("read_c") || p.name.equals("read_i") || p.name.equals("mcmalloc"))){
-            // main cannot be shadowed and doesn't need numbering
+            // reset fpOffset
+            fpOffset = 0;
+            // main function
             if (p.name.equals("main")){
                 p.funLoc = "main";
+                writer.println(".globl main");
                 writer.print(p.funLoc+": ");
                 writer.println("move $fp, $sp");
-
+                fpOffset = 0;
+                VarDeclarator vd = new VarDeclarator();
+                fpOffset = vd.addVarDecls(p, fpOffset, writer);
                 p.block.accept(this);
+                if (p.type == BaseType.INT) {
+                    writer.println("move $a0, $v0");
+                } else {
+                    writer.println("li $a0, 0");
+                }
+                writer.println("li $v0, 17");
+                writer.println(syscall);
+            // not main function
             } else {
-                p.funLoc = p.name + funCount;
-                funCount++;
+                p.funLoc = p.name + funCount; funCount++;
                 writer.print(p.funLoc + ": ");
                 writer.println("move $fp, $sp");
-                // load arguments from stack
                 fpOffset = 0;
+
+                // store temporary registers
+                for (Register r : Register.tmpRegs){
+                writer.println("addi $sp, $sp, -4");
+                writer.println("sw "+r+", -"+fpOffset+"($fp)"); fpOffset += 4;
+                }
+
+                // load arguments from stack
+                int fpStart = 0;
+                int fpEnd = 0;
                 for (VarDecl vd : p.params){
                     if (vd.type == BaseType.INT || vd.type == BaseType.CHAR|| vd.type instanceof PointerType ){
-                        fpOffset += 4;
+                        fpEnd += 4;
                         p.block.params.remove(0);
                     }
                     // TODO add structs
                 }
-                int fpStart = 0;
                 for (VarDecl vd : p.params){
                     if (vd.type == BaseType.INT || vd.type == BaseType.CHAR|| vd.type instanceof PointerType ){
-                        vd.varLoc = "+"+((fpOffset-fpStart)+80)+"($fp)";
-                        writer.println("argument");
+                        vd.varLoc = "+"+((fpEnd-fpStart)+8)+"($fp)";
                         fpStart += 4;
                     }
                     // TODO add structs
                 }
+
+                // declare all local variables
+                VarDeclarator vd = new VarDeclarator();
+                fpOffset = vd.addVarDecls(p, fpOffset, writer);
+
                 // continue as usual
                 p.block.accept(this);
+
+                // restore temporary registers
+                int restore = 0;
+                for (Register r : Register.tmpRegs){
+                    writer.println("lw "+r+", -"+restore+"($fp)"); restore += 4;
+
+                }
                 writer.println("move $sp, $fp");
                 writer.println("jr $ra");
+                writer.println();
             }
         }
         return null;
@@ -236,9 +246,8 @@ public class CodeGenerator implements ASTVisitor<Register> {
             writer.println("la $a0, (" + addressToPrint + ")");
             writer.println("li $v0, 4");
             writer.println(syscall);
-            freeRegister(addressToPrint );
-            writer.println("li $v0, 0");
-            return Register.v0;
+            freeRegister(addressToPrint);
+            return null;
             }
 
             // inbuilt print_i
@@ -248,8 +257,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
             writer.println("li $v0, 1");
             writer.println(syscall);
             freeRegister(toPrint);
-            writer.println("li $v0, 0");
-            return Register.v0;
+            return null;
         }
 
         // inbuilt print_c
@@ -259,22 +267,25 @@ public class CodeGenerator implements ASTVisitor<Register> {
             writer.println("li $v0, 11");
             writer.println(syscall);
             freeRegister(toPrint);
-            writer.println("li $v0, 0");
-            return Register.v0;
+            return null;
         }
 
         // inbuilt read_c
         if (fc.name.equals("read_c")){
             writer.println("li $v0, 12");
             writer.println(syscall);
-            return Register.v0;
+            Register ret = getRegister();
+            writer.println("move "+ret+", $v0");
+            return ret;
         }
 
         // inbuilt read_i
         if (fc.name.equals("read_i")){
             writer.println("li $v0, 5");
             writer.println(syscall);
-            return Register.v0;
+            Register ret = getRegister();
+            writer.println("move "+ret+", $v0");
+            return ret;
         }
 
         // inbuilt mcmalloc
@@ -284,43 +295,55 @@ public class CodeGenerator implements ASTVisitor<Register> {
             writer.println("li $v0, 9");
             writer.println(syscall);
             freeRegister(amount);
-            return Register.v0;
+            Register ret = getRegister();
+            writer.println("move "+ret+", $v0");
+            return ret;
         }
         int paramCount = 0;
+        int fpTemporary = 0;
+
         // initialize arguments
         for (VarDecl vd : fc.fd.params) {
-            if (vd.type == BaseType.INT || vd.type == BaseType.CHAR|| vd.type instanceof PointerType ){
-                writer.println("addi $sp, $sp, -4");
+            if (vd.type == BaseType.INT || vd.type == BaseType.CHAR || vd.type instanceof PointerType ){
                 Register arg = fc.params.get(paramCount).accept(this);
-                writer.println("sw "+arg+", -"+fpOffset+"($fp)");
-                vd.varLoc = "";
-                fpOffset += 4;
+                writer.println("addi $sp, $sp, -4");
+                writer.println("sw "+arg+", -"+(fpOffset+fpTemporary)+"($fp)"); fpTemporary += 4;
                 freeRegister(arg);
                 paramCount++;
             }
             //TODO structs
         }
-        // store temporary registers
-        for (Register r : Register.tmpRegs){
-            writer.println("addi $sp, $sp, -4");
-            writer.println("sw "+r+", -"+fpOffset+"($fp)"); fpOffset += 4;
-        }
+
         // store $ra and $fp before function call
         writer.println("addi $sp, $sp, -4");
-        writer.println("sw $fp, -"+fpOffset+"($fp)"); fpOffset += 4;
+        writer.println("sw $ra, -"+(fpOffset+fpTemporary)+"($fp)");
         writer.println("addi $sp, $sp, -4");
-        writer.println("sw $ra, -"+fpOffset+"($fp)"); fpOffset += 4;
+        writer.println("sw $fp, -"+(fpOffset+fpTemporary+4)+"($fp)");
+
         // function call
         writer.println("jal "+fc.fd.funLoc);
-        // restore $ra and $fp after function call
-        writer.println("lw $ra, 4($fp)");
-        writer.println("lw $fp, 8($fp)");
-        // restore temporary registers
-        int restore = 12;
-        for (Register r : Register.tmpRegs){
-            writer.println("lw "+r+", "+restore+"($fp)"); restore += 4;
+
+        // restore $ra and $fp after function call and free stack
+        writer.println("lw $ra, 8($fp)");
+        writer.println("addi $sp, $sp, +4");
+        writer.println("lw $fp, 4($fp)");
+        writer.println("addi $sp, $sp, +4");
+
+        // free stack from function arguments
+        for (VarDecl vd : fc.fd.params) {
+            if (vd.type == BaseType.INT || vd.type == BaseType.CHAR || vd.type instanceof PointerType ){
+                writer.println("addi $sp, $sp, +4");
+            }
+            //TODO structs
         }
-        return Register.v0;
+
+        // return result
+        if (fc.fd.type == BaseType.VOID) {
+            return null;
+        }
+        Register ret = getRegister();
+        writer.println("move "+ret+", $v0");
+        return ret;
     }
 
     @Override
@@ -432,6 +455,9 @@ public class CodeGenerator implements ASTVisitor<Register> {
     @Override
     public Register visitArrayAccessExpr(ArrayAccessExpr aa) {
         // TODO: to complete
+        //Register arrayAddress = getRegister();
+        //writer.println("la "+arrayAddress+", "+((VarExpr) aa.array).vd.varLoc);
+
         return null;
     }
 
@@ -467,11 +493,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
     // STATEMENTS
     @Override
     public Register visitBlock(Block b) {
-        // TODO: to complete
-        fpOffset = 0;
-        for (VarDecl vd : b.params){
-            vd.accept(this);
-        }
+        // variables declared by VarDeclarator
         for (Stmt stmts : b.stmts){
             stmts.accept(this);
         }
