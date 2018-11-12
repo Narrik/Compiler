@@ -76,6 +76,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
     private int startCount = 0;
     private int endCount = 0;
     private int elseCount = 0;
+    private int eofCount = 0;
 
 
     @Override
@@ -138,9 +139,16 @@ public class CodeGenerator implements ASTVisitor<Register> {
                 writer.print(p.funLoc+": ");
                 writer.println("move $fp, $sp");
                 fpOffset = 0;
+
+                // declare all local variables
                 VarDeclarator vd = new VarDeclarator();
                 fpOffset = vd.addVarDecls(p, fpOffset, writer);
+
+                //continue as usual
                 p.block.accept(this);
+
+                //mark end of function for early return statements
+                writer.println("eof"+eofCount+":"); eofCount++;
                 if (p.type == BaseType.INT) {
                     writer.println("move $a0, $v0");
                 } else {
@@ -186,6 +194,8 @@ public class CodeGenerator implements ASTVisitor<Register> {
                 // continue as usual
                 p.block.accept(this);
 
+                //mark end of function for early return statements
+                writer.println("eof"+eofCount+":"); eofCount++;
                 // restore temporary registers
                 int restore = 0;
                 for (Register r : Register.tmpRegs){
@@ -614,9 +624,11 @@ public class CodeGenerator implements ASTVisitor<Register> {
         // TODO: structs
         if (r.expr == null){
             writer.println("li $v0, 0");
+            writer.println("j eof"+eofCount);
         } else {
             Register ret = r.expr.accept(this);
             writer.println("move $v0, "+ret);
+            writer.println("j eof"+eofCount);
             freeRegister(ret);
         }
         return null;
