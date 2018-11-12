@@ -233,6 +233,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
     public Register visitVarExpr(VarExpr v) {
         Register variable = getRegister();
         writer.println("la "+variable+", "+v.vd.varLoc);
+        if (!(v.vd.type instanceof ArrayType))
         writer.println("lw "+variable+", ("+variable+")");
         return variable;
     }
@@ -492,6 +493,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
         String valueAddress = ((VarExpr) va.expr).vd.varLoc;
         writer.println("la "+value+", "+valueAddress);
         writer.println("lw "+value+", ("+value+")");
+        writer.println("lw "+value+", ("+value+")");
         return value;
     }
 
@@ -595,7 +597,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
             writer.println("lw "+expr1Address+", ("+expr1Address+")");
         }
 
-        // TODO field,valueat expressions
+        // TODO field expressions
         Register expr2 = a.expr2.accept(this);
         if (isChar == 1){
             writer.println("sb "+expr2+", ("+expr1Address+")");
