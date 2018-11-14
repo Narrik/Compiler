@@ -5,6 +5,8 @@ import ast.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
@@ -66,6 +68,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
         writer.close();
     }
 
+    public List<StructTypeDecl> structTypeDeclList = new ArrayList<>();
     private final String data = ".data";
     private final String text = ".text";
     private final String syscall = "syscall";
@@ -104,6 +107,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
 
             } else if (vd.type instanceof StructType){
                 //TODO: STRUCTS
+
             }
         }
         writer.println(text);
@@ -115,6 +119,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
 
     @Override
     public Register visitStructTypeDecl(StructTypeDecl st) {
+        structTypeDeclList.add(st);
         return null;
     }
 

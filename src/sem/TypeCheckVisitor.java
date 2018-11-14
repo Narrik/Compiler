@@ -145,7 +145,7 @@ public class TypeCheckVisitor extends BaseSemanticVisitor<Type> {
                     if(s.structType.structName.equals(((StructType) faT).structName)){
                         for (VarDecl vd : s.params){
                             if(fa.field.equals(vd.varName)){
-                                return null;
+                                return vd.type;
                             }
                         }
                         error("Struct "+s.structType.structName+" has no "+fa.field+" field");

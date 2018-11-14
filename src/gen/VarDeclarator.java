@@ -14,7 +14,7 @@ public class VarDeclarator implements ASTVisitor<Register> {
     private PrintWriter writer; // use this writer to output the assembly instructions
     private int fpOffset;
 
-    public int  addVarDecls(FunDecl fd, int fpOffset, PrintWriter writer){
+    public int addVarDecls(FunDecl fd, int fpOffset, PrintWriter writer){
         this.writer = writer;
         this.fpOffset = fpOffset;
         visitFunDecl(fd);
@@ -43,18 +43,25 @@ public class VarDeclarator implements ASTVisitor<Register> {
 
     // Extends Stmt
     public Register visitExprStmt(ExprStmt es){ return null; }
+
+    @Override
     public Register visitWhile(While w){
         w.stmt.accept(this);
         return null;
     }
+
+    @Override
     public Register visitIf(If i){
         i.stmt1.accept(this);
         if (i.stmt2 != null) {
             i.stmt2.accept(this);
         }
         return null; }
+
     public Register visitAssign(Assign a){ return null; }
     public Register visitReturn(Return r){ return null; }
+
+    @Override
     public Register visitBlock(Block b){
         for (VarDecl vd : b.params){
             vd.accept(this);
@@ -65,8 +72,10 @@ public class VarDeclarator implements ASTVisitor<Register> {
         return null;
     }
 
+    @Override
     public Register visitProgram(Program p){ return null; }
 
+    @Override
     public Register visitStructTypeDecl(StructTypeDecl st){ return null; }
 
     @Override
