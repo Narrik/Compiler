@@ -104,10 +104,16 @@ public class CodeGenerator implements ASTVisitor<Register> {
                 }
                 writer.println(vd.varName + ": .space "+elements);
                 vd.varLoc = vd.varName;
-
+            // if variable is a struct type
             } else if (vd.type instanceof StructType){
-                //TODO: STRUCTS
-
+                for (StructTypeDecl s : structTypeDeclList) {
+                    if (s.structType.structName.equals(((StructType) vd.type).structName)) {
+                        for (VarDecl svd : s.params) {
+                            writer.println(vd.varName+"_"+svd.varName + ": .space 4");
+                            svd.varLoc = vd.varName+"_"+svd.varName;
+                        }
+                    }
+                }
             }
         }
         writer.println(text);
@@ -131,7 +137,6 @@ public class CodeGenerator implements ASTVisitor<Register> {
 
     @Override
     public Register visitFunDecl(FunDecl p) {
-        // TODO: to complete
         // exclude built in functions
         if (!(p.name.equals("print_s") || p.name.equals("print_i") || p.name.equals("print_c") ||
               p.name.equals("read_c") || p.name.equals("read_i") || p.name.equals("mcmalloc"))){
@@ -147,7 +152,7 @@ public class CodeGenerator implements ASTVisitor<Register> {
 
                 // declare all local variables
                 VarDeclarator vd = new VarDeclarator();
-                fpOffset = vd.addVarDecls(p, fpOffset, writer);
+                fpOffset = vd.addVarDecls(p, fpOffset, writer, structTypeDeclList);
 
                 //continue as usual
                 p.block.accept(this);
@@ -178,23 +183,21 @@ public class CodeGenerator implements ASTVisitor<Register> {
                 int fpStart = 0;
                 int fpEnd = 0;
                 for (VarDecl vd : p.params){
-                    if (vd.type == BaseType.INT || vd.type == BaseType.CHAR|| vd.type instanceof PointerType ){
+                    if (vd.type == BaseType.INT || vd.type == BaseType.CHAR || vd.type instanceof PointerType ){
                         fpEnd += 4;
                         p.block.params.remove(0);
                     }
-                    // TODO add structs
                 }
                 for (VarDecl vd : p.params){
-                    if (vd.type == BaseType.INT || vd.type == BaseType.CHAR|| vd.type instanceof PointerType ){
+                    if (vd.type == BaseType.INT || vd.type == BaseType.CHAR || vd.type instanceof PointerType ){
                         vd.varLoc = "+"+((fpEnd-fpStart)+8)+"($fp)";
                         fpStart += 4;
                     }
-                    // TODO add structs
                 }
 
                 // declare all local variables
                 VarDeclarator vd = new VarDeclarator();
-                fpOffset = vd.addVarDecls(p, fpOffset, writer);
+                fpOffset = vd.addVarDecls(p, fpOffset, writer, structTypeDeclList);
 
                 // continue as usual
                 p.block.accept(this);
@@ -255,7 +258,6 @@ public class CodeGenerator implements ASTVisitor<Register> {
 
     @Override
     public Register visitFunCallExpr(FunCallExpr fc) {
-        // TODO: complete undefined function
         // inbuilt print_s
         if (fc.name.equals("print_s")) {
             Register addressToPrint = fc.params.get(0).accept(this);
@@ -327,7 +329,6 @@ public class CodeGenerator implements ASTVisitor<Register> {
                 freeRegister(arg);
                 paramCount++;
             }
-            //TODO structs
         }
 
         // store $ra and $fp before function call
@@ -350,7 +351,6 @@ public class CodeGenerator implements ASTVisitor<Register> {
             if (vd.type == BaseType.INT || vd.type == BaseType.CHAR || vd.type instanceof PointerType ){
                 writer.println("addi $sp, $sp, +4");
             }
-            //TODO structs
         }
 
         // return result
@@ -470,7 +470,6 @@ public class CodeGenerator implements ASTVisitor<Register> {
 
     @Override
     public Register visitArrayAccessExpr(ArrayAccessExpr aa) {
-        // TODO: to complete
         Register arrayAddress = getRegister();
         Register arrayIndex = aa.index.accept(this);
         Register value = getRegister();
@@ -497,13 +496,22 @@ public class CodeGenerator implements ASTVisitor<Register> {
 
     @Override
     public Register visitFieldAccessExpr(FieldAccessExpr fa) {
-        // TODO: to complete
-        return null;
+        Register value = getRegister();
+        for (StructTypeDecl s : structTypeDeclList) {
+            if (s.structType.structName.equals(((StructType) fa.structure.type).structName)) {
+                for (VarDecl vd : s.params) {
+                    if (fa.field.equals(vd.varName)) {
+                        writer.println("la "+value+", "+vd.varLoc);
+                        writer.println("lw "+value+", ("+value+")");
+                    }
+                }
+            }
+        }
+        return value;
     }
 
     @Override
     public Register visitValueAtExpr(ValueAtExpr va) {
-        // TODO: to complete
         Register value = getRegister();
         String valueAddress = ((VarExpr) va.expr).vd.varLoc;
         writer.println("la "+value+", "+valueAddress);
@@ -578,7 +586,6 @@ public class CodeGenerator implements ASTVisitor<Register> {
 
     @Override
     public Register visitAssign(Assign a) {
-        // TODO: to complete
         int isChar = 0;
         Register expr1Address = getRegister();
         if (a.expr1 instanceof VarExpr){
@@ -612,7 +619,18 @@ public class CodeGenerator implements ASTVisitor<Register> {
             writer.println("lw "+expr1Address+", ("+expr1Address+")");
         }
 
-        // TODO field expressions
+        if (a.expr1 instanceof FieldAccessExpr) {
+            for (StructTypeDecl s : structTypeDeclList) {
+                if (s.structType.structName.equals(((StructType) ((FieldAccessExpr) a.expr1).structure.type).structName)) {
+                    for (VarDecl vd : s.params) {
+                        if (((FieldAccessExpr)a.expr1).field.equals(vd.varName)) {
+                            writer.println("la " + expr1Address + ", " + vd.varLoc);
+                        }
+                    }
+                }
+            }
+        }
+
         Register expr2 = a.expr2.accept(this);
         if (isChar == 1){
             writer.println("sb "+expr2+", ("+expr1Address+")");
@@ -626,7 +644,6 @@ public class CodeGenerator implements ASTVisitor<Register> {
 
     @Override
     public Register visitReturn(Return r) {
-        // TODO: structs
         if (r.expr == null){
             writer.println("li $v0, 0");
             writer.println("j eof"+eofCount);

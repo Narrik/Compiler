@@ -5,7 +5,9 @@ import ast.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.EmptyStackException;
+import java.util.List;
 import java.util.Stack;
 
 public class VarDeclarator implements ASTVisitor<Register> {
@@ -13,10 +15,12 @@ public class VarDeclarator implements ASTVisitor<Register> {
 
     private PrintWriter writer; // use this writer to output the assembly instructions
     private int fpOffset;
+    public List<StructTypeDecl> structTypeDeclList = new ArrayList<>();
 
-    public int addVarDecls(FunDecl fd, int fpOffset, PrintWriter writer){
+    public int addVarDecls(FunDecl fd, int fpOffset, PrintWriter writer, List<StructTypeDecl> structTypeDeclList){
         this.writer = writer;
         this.fpOffset = fpOffset;
+        this.structTypeDeclList = structTypeDeclList;
         visitFunDecl(fd);
         return this.fpOffset;
     }
@@ -80,7 +84,6 @@ public class VarDeclarator implements ASTVisitor<Register> {
 
     @Override
     public Register visitVarDecl(VarDecl vd) {
-        // TODO: to complete
         // if variable is an int, char or pointer
         if (vd.type == BaseType.INT || vd.type == BaseType.CHAR|| vd.type instanceof PointerType ){
             writer.println("addi $sp, $sp, -4");
@@ -100,7 +103,15 @@ public class VarDeclarator implements ASTVisitor<Register> {
             fpOffset += elements;
 
         } else if (vd.type instanceof StructType){
-            //TODO: STRUCTS
+            for (StructTypeDecl s : structTypeDeclList) {
+                if (s.structType.structName.equals(((StructType) vd.type).structName)) {
+                    for (VarDecl svd : s.params) {
+                        writer.println("addi $sp, $sp, -4");
+                        svd.varLoc = "-"+fpOffset+"($fp)";
+                        fpOffset += 4;
+                    }
+                }
+            }
         }
         return null;
     }

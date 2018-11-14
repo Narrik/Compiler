@@ -1,28 +1,128 @@
 .data
-a: .space 4
-b: .space 40
+c_y: .space 4
+c_z: .space 4
 .text
+plus0: move $fp, $sp
+addi $sp, $sp, -4
+sw $t0, -0($fp)
+addi $sp, $sp, -4
+sw $t1, -4($fp)
+addi $sp, $sp, -4
+sw $t2, -8($fp)
+addi $sp, $sp, -4
+sw $t3, -12($fp)
+addi $sp, $sp, -4
+sw $t4, -16($fp)
+addi $sp, $sp, -4
+sw $t5, -20($fp)
+addi $sp, $sp, -4
+sw $t6, -24($fp)
+addi $sp, $sp, -4
+sw $t7, -28($fp)
+addi $sp, $sp, -4
+sw $s0, -32($fp)
+addi $sp, $sp, -4
+sw $s1, -36($fp)
+addi $sp, $sp, -4
+sw $s2, -40($fp)
+addi $sp, $sp, -4
+sw $s3, -44($fp)
+addi $sp, $sp, -4
+sw $s4, -48($fp)
+addi $sp, $sp, -4
+sw $s5, -52($fp)
+addi $sp, $sp, -4
+sw $s6, -56($fp)
+addi $sp, $sp, -4
+sw $s7, -60($fp)
+addi $sp, $sp, -4
+sw $t8, -64($fp)
+addi $sp, $sp, -4
+sw $t9, -68($fp)
+la $t9, +12($fp)
+lw $t9, ($t9)
+li $s7, 3
+add $t8, $t9, $s7
+move $v0, $t8
+j eof0
+eof0:
+lw $t0, -0($fp)
+lw $t1, -4($fp)
+lw $t2, -8($fp)
+lw $t3, -12($fp)
+lw $t4, -16($fp)
+lw $t5, -20($fp)
+lw $t6, -24($fp)
+lw $t7, -28($fp)
+lw $s0, -32($fp)
+lw $s1, -36($fp)
+lw $s2, -40($fp)
+lw $s3, -44($fp)
+lw $s4, -48($fp)
+lw $s5, -52($fp)
+lw $s6, -56($fp)
+lw $s7, -60($fp)
+lw $t8, -64($fp)
+lw $t9, -68($fp)
+move $sp, $fp
+jr $ra
+
 .globl main
 main: move $fp, $sp
-li $t8, 0
-li $s7, 4
-mul $t8, $t8, $s7
-la $t9, b
-add $t9, $t9, $t8
-li $t8, 5
-sw $t8, ($t9)
-la $t8, a
-la $t9, b
+addi $sp, $sp, -4
+addi $sp, $sp, -4
+addi $sp, $sp, -4
+la $t8, -4($fp)
+li $t9, 'j'
 sw $t9, ($t8)
-li $t8, 4
+la $t9, -0($fp)
+li $t8, 7
 sw $t8, ($t9)
-la $t8, a
-lw $t8, ($t8)
-lw $t8, ($t8)
-addi $a0, $t8, 0
+la $t8, -8($fp)
+la $t9, -0($fp)
+lw $t9, ($t9)
+addi $sp, $sp, -4
+sw $t9, -12($fp)
+addi $sp, $sp, -4
+sw $ra, -16($fp)
+addi $sp, $sp, -4
+sw $fp, -20($fp)
+jal plus0
+lw $ra, 8($fp)
+addi $sp, $sp, +4
+lw $fp, 4($fp)
+addi $sp, $sp, +4
+addi $sp, $sp, +4
+move $t9, $v0
+sw $t9, ($t8)
+la $t9, -0($fp)
+lw $t9, ($t9)
+addi $a0, $t9, 0
 li $v0, 1
 syscall
-eof0:
-li $a0, 0
+la $t9, -8($fp)
+lw $t9, ($t9)
+addi $a0, $t9, 0
+li $v0, 1
+syscall
+la $t9, -0($fp)
+lw $t9, ($t9)
+addi $sp, $sp, -4
+sw $t9, -12($fp)
+addi $sp, $sp, -4
+sw $ra, -16($fp)
+addi $sp, $sp, -4
+sw $fp, -20($fp)
+jal plus0
+lw $ra, 8($fp)
+addi $sp, $sp, +4
+lw $fp, 4($fp)
+addi $sp, $sp, +4
+addi $sp, $sp, +4
+move $t9, $v0
+move $v0, $t9
+j eof1
+eof1:
+move $a0, $v0
 li $v0, 17
 syscall
