@@ -16,11 +16,11 @@ using namespace std;
 namespace {
     struct SimpleDCE : public FunctionPass {
         static char ID;
-        bool changed = true;
         SmallVector<Instruction *, 64> Worklist;
         SimpleDCE() : FunctionPass(ID) {}
 
         virtual bool runOnFunction(Function &F) {
+            bool changed = true;
             bool cutInstruction = false;
             while (changed) {
                 changed = false;
