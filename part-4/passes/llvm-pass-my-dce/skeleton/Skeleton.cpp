@@ -238,13 +238,13 @@ InstValueSetMap computeLiveness(Function &F) {
 namespace {
     struct MyDCE : public FunctionPass {
         static char ID;
-        bool changed = true;
         SmallVector<Instruction *, 64> Worklist;
-
         MyDCE() : FunctionPass(ID) {}
 
         virtual bool runOnFunction(Function &F) {
             bool cutInstruction = false;
+            bool changed = true;
+            printed = false;
             while (changed) {
                 InstValueSetMap out;
                 out = computeLiveness(F);
