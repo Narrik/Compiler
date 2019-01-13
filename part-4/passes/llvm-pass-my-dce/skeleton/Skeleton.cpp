@@ -55,7 +55,6 @@ InstValueSetMap computeLiveness(Function &F) {
                 ValueSet def;
                 // Set the def set to be the instruction itself
                 // def[n]
-                //errs() << *inst << " Added to def set" << '\n';
                 def.insert(inst);
 
                 // If our instruction is a PHI instruction, the use set depends on the basic block
@@ -86,41 +85,35 @@ InstValueSetMap computeLiveness(Function &F) {
                         }
                     }
                 }
+
                 // out[n] - def[n]
                 std::set_difference(out[inst].begin(), out[inst].end(),
                                     def.begin(), def.end(),
                                     std::inserter (diff[inst], diff[inst].begin()));
-                //while (!diff.empty()) {
-                //    errs() << diff.pop_back_val() << " set difference between out[n] and def[n] \n";
-                //}
 
                 in[inst].clear();
                 // in[n] = use[n] U (out[n]-def[n])
                 std::set_union(use.begin(),use.end(),
                                diff[inst].begin(), diff[inst].end(),
                                std::inserter(in[inst],in[inst].begin()));
-                //while (!in[inst].empty()) {
-                //    in[inst].pop_back_val()->printAsOperand(errs(),false);
-                //    errs()  << " live-in set of instruction " << *inst << '\n';
-                //}
 
                 // Get all successor instructions
                 ValueSet succInsts;
-                ValueSet brokenPHIs;
+                ValueSet brokenPHIs = empty;
                 if (inst->isTerminator()) {
                     for (int i = 0; i < inst->getNumSuccessors(); i++){
                         BasicBlock* succBB = inst->getSuccessor(i);
                         auto it = succBB->begin();
                         auto succInst = &*it;
                         succInsts.insert(succInst);
-//                        if (isa<PHINode>(succInst)) {
-//                            for (it++; it != succBB->end(); it++) {
-//                                if (!isa<PHINode>(&*it)) {
-//                                    break;
-//                                }
-//                                brokenPHIs.insert(&*it);
-//                            }
-//                        }
+                        if (isa<PHINode>(succInst)) {
+                            for (it++; it != succBB->end(); it++) {
+                                if (!isa<PHINode>(&*it)) {
+                                    break;
+                                }
+                                brokenPHIs.insert(&*it);
+                            }
+                        }
                     }
                 } else {
                     auto iterCopy = i;
@@ -131,8 +124,9 @@ InstValueSetMap computeLiveness(Function &F) {
 
                 // Perform set operations
                 ValueSet outTemp1 = empty;
+                ValueSet outTemp2;
                 for (Value* succInst:succInsts) {
-                    ValueSet outTemp2 = empty;
+                    outTemp2 = empty;
                     // Set out set to be equal to union of all in sets of successor nodes
                     if (PHINode * PHIinst = dyn_cast<PHINode>(succInst)){
                         if (inst->isTerminator()){
@@ -147,15 +141,10 @@ InstValueSetMap computeLiveness(Function &F) {
                                            std::inserter(outTemp2, outTemp2.begin()));
                             outTemp1 = outTemp2;
                         } else {
-                            // create new in set for PHInode
-                            ValueSet inTemp1 = empty;
-                            ValueSet inTemp2 = empty;
-                            std::set_union(inTemp2.begin(),inTemp2.end(),
-                                           diff[PHIinst].begin(), diff[PHIinst].end(),
-                                           std::inserter(inTemp1,inTemp1.begin()));
+                            // if we accessed a PHINode not through a terminator
                             // out[n] = U in[s], s == succ[n]
                             std::set_union(outTemp1.begin(),outTemp1.end(),
-                                           inTemp1.begin(), inTemp1.end(),
+                                           diff[PHIinst].begin(), diff[PHIinst].end(),
                                            std::inserter(outTemp2, outTemp2.begin()));
                             outTemp1 = outTemp2;
                         }
@@ -167,10 +156,20 @@ InstValueSetMap computeLiveness(Function &F) {
                     }
                 }
                 out[inst] = outTemp1;
-                //while (!out[inst].empty()) {
-                //    out[inst].pop_back_val()->printAsOperand(errs(),false);
-                //    errs()  << " live-out set of instruction " << *inst << '\n';
-                //}
+                if(!brokenPHIs.empty()){
+                    outTemp1 = empty;
+                    outTemp2 = empty;
+                    for (Value* brokenPHI:brokenPHIs){
+                        std::set_union(phis[brokenPHI][&*bb].begin(),phis[brokenPHI][&*bb].end(),
+                                       outTemp1.begin(), outTemp1.end(),
+                                       std::inserter(outTemp2, outTemp2.begin()));
+                        outTemp1 = outTemp2;
+                    }
+                    std::set_union(outTemp1.begin(),outTemp1.end(),
+                                   out[inst].begin(), out[inst].end(),
+                                   std::inserter(outTemp2, outTemp2.begin()));
+                    out[inst] = outTemp2;
+                }
             }
         }
 
@@ -186,7 +185,6 @@ InstValueSetMap computeLiveness(Function &F) {
                 }
             }
         }
-//        //PRINT LIVENESS
 //        for (Function::iterator bb = F.begin(), e = F.end(); bb != e; ++bb) {
 //            // Iterate over instructions
 //            for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e; ++i) {
@@ -208,7 +206,8 @@ InstValueSetMap computeLiveness(Function &F) {
 //        }
 
     } while (changed);
-    if (printed == false){
+    // Print liveness
+    if (!printed){
         for (BasicBlock &bb : F) {
             for (auto iter = bb.begin(); iter != bb.end(); ++iter) {
                 Instruction* I = &*iter;
@@ -231,7 +230,6 @@ InstValueSetMap computeLiveness(Function &F) {
         }
         errs() << "{}\n";
     }
-
     return out;
 }
 
@@ -253,7 +251,7 @@ namespace {
                 for (Function::iterator bb = F.begin(), e = F.end(); bb != e; ++bb) {
                     for (BasicBlock::iterator i = bb->begin(), e = bb->end(); i != e; ++i) {
                         Instruction *inst = &*i;
-                        if (inst->isSafeToRemove()){
+                        if (!isa<CallInst>(inst) && !inst->mayHaveSideEffects() && !inst->isTerminator()){
                             if (out[inst].find(inst) == out[inst].end()){
                                 changed = true;
                                 cutInstruction = true;
